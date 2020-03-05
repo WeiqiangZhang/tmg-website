@@ -1,0 +1,11 @@
+@import 'styles/palette.scss';
+
+.social {
+    padding: 1rem;
+    background-color: $blueGrey;
+    margin-top: auto;
+    &__icon {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+}

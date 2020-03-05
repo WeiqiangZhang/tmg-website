@@ -1,0 +1,23 @@
+@import 'styles/palette.scss';
+
+.sponsor {
+    margin: 2.5rem 0;
+    &__container {
+        width: 100%;
+        height: 100%;
+        border: 0.125rem solid $grey3;
+        border-radius: 1.5rem;
+        background-color: $grey1;
+        transition: background-color 0.25s;
+        transition-timing-function: ease-in;
+        &:hover {
+            background-color: $grey3;
+        }
+    }
+    &__icon {
+        width: 100%;
+        height: 100%;
+        display: block;
+        margin: auto;
+    }
+}

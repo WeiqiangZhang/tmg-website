@@ -1,0 +1,11 @@
+@import 'styles/palette.scss';
+
+.navigation {
+    border-bottom: 0.125rem solid $grey3; 
+    padding: 1.5rem;
+    &__logo {
+        width: 3.5rem;
+        height: 3.5rem;
+        cursor: pointer;
+    }
+}
