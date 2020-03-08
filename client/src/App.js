@@ -7,10 +7,13 @@ import theme from './styles/theme';
 
 import './styles/App.scss';
 
+import CssBaseline from '@material-ui/core/CssBaseline';
+
 class App extends React.Component {
   render() {
     return (
       <ThemeProvider theme={theme}>
+        <CssBaseline />
         <div className="app-container">
           <Navigation />
           <Home />
