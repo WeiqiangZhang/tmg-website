@@ -7,6 +7,9 @@
     min-height: 15rem;
     background: linear-gradient(90deg, $primary 0%, $secondary 100%);
     padding: 1rem 0;
+    @media (max-width: 75rem) {
+        min-height: 7.5rem;    
+    }
     text-align: center;
     &__text {
         padding-right: 0.25rem;

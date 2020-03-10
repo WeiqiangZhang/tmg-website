@@ -1,18 +1,18 @@
 import React from 'react';
-import { Container, Grid, Link } from '@material-ui/core';
+import { Container, Grid } from '@material-ui/core';
 import { Typography } from '@material-ui/core';
 
-import './styles/hiring.scss';
+import './styles/about.scss';
 
-class Hiring extends React.Component {
+class About extends React.Component {
   render() {
     return (
-      <div className="hiring">
+      <div className="about">
         <Container fixed>
-          <Typography variant="h1" className="hiring__header" color="primary">Director Hiring</Typography>
+          <Typography variant="h1" className="about__header" color="primary">About TMG</Typography>
           <Grid container>
             <Grid item md={8} xs={12}>
-              <div className="hiring__body">
+              <div className="about__body">
                 <Typography variant="h6">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Donec nec nisi et nulla consectetur dictum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
                 posuere cubilia Curae; Donec consequat, ex sed aliquam iaculis, lectus erat viverra mi, sit amet vehicula
@@ -27,26 +27,19 @@ class Hiring extends React.Component {
             <Grid item md={4}>
             </Grid>
           </Grid>
-          <div className="hiring__deadline">
-            <Typography variant="subtitle1" color="primary">Deadline: late march</Typography>
+          <div className="about__body">
+            <Typography variant="h5" color="primary">FAQ</Typography>
           </div>
-          <Grid item md={4} xs={12}>
-            <div className="hiring__box">
-              <Typography variant="subtitle2">Role: Full Stack Developer</Typography>
-              <Typography variant="subtitle2">Description: Post memes</Typography>
-            </div>
-          </Grid>
-          <Grid item md={4} xs={12}>
-            <Typography className="hiring__link">
-              <Link href="#" variant="subtitle2" color="inherit">
-                Application Form
-            </Link>
-            </Typography>
-          </Grid>
+          <div className="about__question">
+            <Typography variant="subtitle1">Q: Is Arman single?</Typography>
+          </div>
+          <div className="about__answer">
+            <Typography variant="body2">A: Yes</Typography>
+          </div>
         </Container>
       </div>
     );
   }
 }
 
-export default Hiring;
+export default About;

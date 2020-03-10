@@ -3,6 +3,7 @@ import { ThemeProvider } from '@material-ui/core/styles';
 import Navigation from './container/navigation';
 import Home from './home';
 import Hiring from './hiring';
+import About from './about';
 import Social from './container/social';
 import theme from './styles/theme';
 import {
@@ -18,16 +19,16 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 class App extends React.Component {
   routeUpdate(page, history) {
     switch (page) {
-      case 0:
+      case 'hiring':
         history.push('/hiring');
         break;
-      case 1:
+      case 'about':
         history.push('/about');
         break;
-      case 2:
+      case 'team':
         history.push('/team');
         break;
-      case 3:
+      case 'home':
         history.push('/');
         break;
       default:
@@ -43,7 +44,7 @@ class App extends React.Component {
           <Navigation routeUpdate={(page) => this.routeUpdate(page, history)} />
           <Switch>
             <Route path="/about">
-              <Home />
+              <About />
             </Route>
             <Route path="/hiring">
               <Hiring />

@@ -5,5 +5,6 @@ export const constants = {
   grey2: '#eeeeee',
   grey3: '#e0e0e0',
   blueGrey: '#37474f',
-  white: '#ffffff'
+  white: '#ffffff',
+  blue: '#2196f3'
 };

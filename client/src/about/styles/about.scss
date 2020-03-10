@@ -1,6 +1,6 @@
 @import 'styles/palette.scss';
 
-.hiring {
+.about {
     margin: 2.5rem 0 5rem;
     &__header {
         text-align: center;
@@ -8,15 +8,13 @@
     &__body {
         margin-top: 0.75rem;
     }
-    &__deadline {
+    &__faq {
         margin-top: 1rem;
     }
-    &__box {
-        border: 0.125rem solid $secondary;
-        padding: 0.75rem;
-        margin: 1.25rem 0 1rem;
+    &__question {
+        margin: 0.5rem 0;
     }
-    &__link {
-        color: $blue
+    &__answer {
+        margin: 0.5rem 0;
     }
 }

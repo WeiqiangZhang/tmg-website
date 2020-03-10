@@ -19,7 +19,7 @@ const useStyles = makeStyles({
 });
 
 function Navigation(props) {
-  const [value, setValue] = useState(null);
+  const [value, setValue] = useState(new URL(window.location.href).pathname.split('/').pop());
   const classes = useStyles();
   const { routeUpdate } = props;
   return (
@@ -28,7 +28,7 @@ function Navigation(props) {
       <Grid container justify="space-between" alignItems="center">
         <Grid item>
           <img className="navigation__logo" src={logo} alt="Home" onClick={() => {
-            routeUpdate(3);
+            routeUpdate('home');
             setValue(null);
             }}/>
         </Grid>
@@ -40,9 +40,9 @@ function Navigation(props) {
               routeUpdate(newValue);
             }}
             showLabels>
-            <BottomNavigationAction classes={classes} label="Hiring" />
-            <BottomNavigationAction classes={classes} label="About" />
-            <BottomNavigationAction classes={classes} label="Team" />
+            <BottomNavigationAction classes={classes} label="Hiring" value='hiring'/>
+            <BottomNavigationAction classes={classes} label="About" value='about'/>
+            <BottomNavigationAction classes={classes} label="Team" value='team'/>
           </BottomNavigation>
         </Grid>
       </Grid>

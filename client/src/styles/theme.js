@@ -46,7 +46,10 @@ export default createMuiTheme({
     },
     blueGrey: {
       main: constants.blueGrey
-    }
+    },
+    blue: {
+      main: constants.blue
+    },
   },
   typography: {
     fontFamily: [
@@ -56,18 +59,33 @@ export default createMuiTheme({
     fontWeightLight: 300,
     fontWeightRegular: 500,
     fontWeightMedium: 700,
+    h1: {
+      '@media (max-width: 75rem)': {
+        fontSize: '4rem',
+      },
+    },
     h3: {
       fontFamily: 'UniSansThin'
     },
     h6: {
-      fontFamily: 'UniSansThin'
-    },
-    body1: {
-      fontFamily: 'UniSans',
+      fontFamily: 'UniSansThin',
       fontWeight: 300
     },
+    subtitle1: {
+      fontSize: '1.25rem',
+    },
+    subtitle2: {
+      fontSize: '1rem',
+    },
+    body1: {
+      fontFamily: 'UniSansThin',
+      fontSize: '1rem',
+      fontWeight: 700
+    },
     body2: {
-      fontFamily: 'UniSansThin'
+      fontFamily: 'UniSansThin',
+      fontSize: '1rem',
+      fontWeight: 700
     }
   },
   overrides: {
