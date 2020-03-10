@@ -10,14 +10,14 @@ class Social extends React.Component {
     return (
       <div className="social">
         <Container fixed>
-          <Grid container spacing="4" justify="center" alignItems="center">
+          <Grid container spacing={4} justify="center" alignItems="center">
             <Grid item>
-              <a href="https://www.facebook.com/HomeOfThePinkSheep" target="_blank">
+              <a href="https://www.facebook.com/HomeOfThePinkSheep" target="_blank" rel="noopener noreferrer">
                 <img className="social__icon" src={facebook} alt="facebook" />
               </a>
             </Grid>
             <Grid item>
-              <a href="https://www.instagram.com/the.marketing.group/" target="_blank">
+              <a href="https://www.instagram.com/the.marketing.group/" target="_blank" rel="noopener noreferrer">
                 <img className="social__icon" src={instagram} alt="instagram" />
               </a>
             </Grid>

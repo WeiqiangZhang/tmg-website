@@ -6,6 +6,7 @@
     flex-direction: column;
     min-height: 15rem;
     background: linear-gradient(90deg, $primary 0%, $secondary 100%);
+    padding: 1rem 0;
     text-align: center;
     &__text {
         padding-right: 0.25rem;

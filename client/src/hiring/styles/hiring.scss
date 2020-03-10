@@ -1,0 +1,20 @@
+@import 'styles/palette.scss';
+
+.hiring {
+    margin-top: 2.5rem;
+    &__header {
+        text-align: center;
+    }
+    &__body {
+        margin-top: 0.75rem;
+    }
+    &__deadline {
+        margin-top: 1rem;
+    }
+    &__box {
+        border: 0.125rem solid $secondary;
+        padding: 0.75rem;
+        margin-top: 1.25rem;
+        border-radius: 1.5rem;
+    }
+}
