@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Grid, Tabs, Tab, withStyles } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 import { Typography } from '@material-ui/core';
 import './styles/member.scss';
 
@@ -9,7 +9,7 @@ function Member(props) {
     <div className="member">
       <Grid container>
         <Grid item md={4} xs={12}>
-          <img className="member__image" src={image} />
+          <img className="member__image" src={image} alt={`${name}`}/>
           <Typography variant="subtitle2">{name}</Typography>
         </Grid>
         <Grid item md={8} xs={12}>

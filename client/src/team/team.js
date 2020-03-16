@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Grid, Tabs, Tab, withStyles } from '@material-ui/core';
+import { Container, Tabs, Tab, withStyles } from '@material-ui/core';
 import { Typography } from '@material-ui/core';
 import Members from './members';
 
