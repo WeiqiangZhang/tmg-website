@@ -22,7 +22,7 @@ class Social extends React.Component {
               </a>
             </Grid>
             <Grid item>
-              <a href="mailto:weiqiang.zhang@mail.utoronto.ca">
+              <a href="mailto:themarketinggrouputsc@outlook.com">
                 <img className="social__icon" src={gmail} alt="gmail" />
               </a>
             </Grid>

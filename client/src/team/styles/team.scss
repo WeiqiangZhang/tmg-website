@@ -1,0 +1,11 @@
+@import 'styles/palette.scss';
+
+.team {
+    margin: 2.5rem 0 5rem;
+    &__header {
+        text-align: center;
+    }
+    &__container {
+        margin-top: 0.75rem;
+    }
+}

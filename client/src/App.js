@@ -4,6 +4,7 @@ import Navigation from './container/navigation';
 import Home from './home';
 import Hiring from './hiring';
 import About from './about';
+import Team from './team';
 import Social from './container/social';
 import theme from './styles/theme';
 import {
@@ -49,8 +50,8 @@ class App extends React.Component {
             <Route path="/hiring">
               <Hiring />
             </Route>
-            <Route path="/meet">
-              <Home />
+            <Route path="/team">
+              <Team />
             </Route>
             <Route path="/">
               <Home />
