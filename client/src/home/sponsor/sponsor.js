@@ -14,17 +14,17 @@ class Sponsor extends React.Component {
           <Grid container spacing={2} justify="center" alignItems="center">
             <Grid item xs={12} sm={6} md={4}>
               <div className="sponsor__container">
-                <img className="sponsor__icon" src={microsoft} alt="facebook" />
+                <img className="sponsor__icon" src={microsoft} alt="sponsor" />
               </div>
             </Grid>
             <Grid item xs={12} sm={6} md={4}>
               <div className="sponsor__container">
-                <img className="sponsor__icon" src={microsoft} alt="instagram" />
+                <img className="sponsor__icon" src={microsoft} alt="sponsor" />
               </div>
             </Grid>
             <Grid item xs={12} sm={6} md={4}>
               <div className="sponsor__container">
-                <img className="sponsor__icon" src={microsoft} alt="gmail" />
+                <img className="sponsor__icon" src={microsoft} alt="sponsor" />
               </div>
             </Grid>
           </Grid>
