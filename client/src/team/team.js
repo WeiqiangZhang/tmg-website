@@ -9,7 +9,7 @@ const StyledTab = withStyles(theme => ({
   root: {
     fontFamily: 'UniSansThin',
     fontWeight: theme.typography.fontWeightRegular,
-    fontSize: "1.5rem"
+    fontSize: "1.5rem",
   },
 }))(props => <Tab {...props} />);
 
@@ -26,6 +26,7 @@ function Team(props) {
             value={value}
             onChange={(event, newValue) => { setValue(newValue) }}
             aria-label="Role Tabs"
+            variant="scrollable"
           >
             <StyledTab label="President" />
             <StyledTab label="Vice President" />
