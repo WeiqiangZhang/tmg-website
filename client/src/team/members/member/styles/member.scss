@@ -1,9 +1,7 @@
 @import 'styles/palette.scss';
 
 .member {
-    &:not(:last-child) {
-        border-bottom: 0.125rem solid $grey3;
-    }
+    border: 0.125rem solid $primary;
     padding: 1rem;
     &__image {
         max-width: 100%;

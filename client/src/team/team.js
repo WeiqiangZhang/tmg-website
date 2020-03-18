@@ -30,6 +30,7 @@ function Team(props) {
             <StyledTab label="President" />
             <StyledTab label="Vice President" />
             <StyledTab label="Director" />
+            <StyledTab label="Board of Directors" />
           </Tabs>
         </div>
         <Members tab={value} />
