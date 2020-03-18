@@ -13,6 +13,9 @@ const useStyles = makeStyles({
       fontSize: "1.25rem"
     }
   },
+  root: {
+    flex: "none"
+  },
   label: {
     fontSize: "1.25rem"
   }
@@ -42,7 +45,7 @@ function Navigation(props) {
             showLabels>
             <BottomNavigationAction classes={classes} label="Hiring" value='hiring'/>
             <BottomNavigationAction classes={classes} label="About" value='about'/>
-            <BottomNavigationAction classes={classes} label="Team" value='team'/>
+            <BottomNavigationAction classes={classes} label="Leadersheep" value='team'/>
           </BottomNavigation>
         </Grid>
       </Grid>

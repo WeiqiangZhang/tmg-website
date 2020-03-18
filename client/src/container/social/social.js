@@ -1,6 +1,7 @@
 import React from 'react';
 import facebook from './assets/facebook.png';
 import instagram from './assets/instagram.png';
+import tiktok from './assets/tiktok.png';
 import gmail from './assets/gmail.png';
 import { Container, Grid } from '@material-ui/core';
 
@@ -19,6 +20,11 @@ class Social extends React.Component {
             <Grid item>
               <a href="https://www.instagram.com/the.marketing.group/" target="_blank" rel="noopener noreferrer">
                 <img className="social__icon" src={instagram} alt="instagram" />
+              </a>
+            </Grid>
+            <Grid item>
+              <a href="https://www.tiktok.com/@themarketinggroup" target="_blank" rel="noopener noreferrer">
+                <img className="social__icon" src={tiktok} alt="tiktok" />
               </a>
             </Grid>
             <Grid item>

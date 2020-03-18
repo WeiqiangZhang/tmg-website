@@ -18,7 +18,7 @@ class Banner extends React.Component {
   }
 
   typeWriter() {
-    const texts = ["Amazing", "Innovation", "Batman", "The Marketing Group"]
+    const texts = ["the herd", "the home of marketing", "TMG"]
     setInterval(() => {
       this.setState(prevState => ({
         count: (prevState.count === texts.length - 1 ? 0 : prevState.count + 1),
@@ -41,7 +41,7 @@ class Banner extends React.Component {
     return (
       <div className="banner">
         <span>
-          <Typography variant="h1" className="banner__text">{`We are ${text}_`}</Typography>
+          <Typography variant="h1" className="banner__text">{`Welcome to ${text}_`}</Typography>
         </span>
       </div>
     );
