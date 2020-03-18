@@ -6,6 +6,7 @@ import Hiring from './hiring';
 import About from './about';
 import Team from './team';
 import Social from './container/social';
+import Admin from './admin';
 import theme from './styles/theme';
 import {
   Switch,
@@ -52,6 +53,9 @@ class App extends React.Component {
             </Route>
             <Route path="/team">
               <Team />
+            </Route>
+            <Route path="/admin">
+              <Admin />
             </Route>
             <Route path="/">
               <Home />
