@@ -41,7 +41,7 @@ class App extends React.Component {
     return (
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <div className="app-container">
+        {<div className="app-container">
           <Navigation routeUpdate={(page) => this.routeUpdate(page, history)} />
           <Switch>
             <Route path="/about">
@@ -58,7 +58,7 @@ class App extends React.Component {
             </Route>
           </Switch>
           <Social />
-        </div>
+        </div>}
       </ThemeProvider>
     );
   }

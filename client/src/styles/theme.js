@@ -52,10 +52,7 @@ export default createMuiTheme({
     },
   },
   typography: {
-    fontFamily: [
-      'UniSans',
-      'UniSansThin'
-    ].join(','),
+    fontFamily: 'UniSans, UniSansThin',
     fontWeightLight: 300,
     fontWeightRegular: 500,
     fontWeightMedium: 700,
