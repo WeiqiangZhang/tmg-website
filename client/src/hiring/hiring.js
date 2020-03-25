@@ -2,49 +2,64 @@ import React from 'react';
 import { Container, Grid, Link } from '@material-ui/core';
 import { Typography } from '@material-ui/core';
 
+import HiringSlide from './hiringslide';
+
 import './styles/hiring.scss';
 
 class Hiring extends React.Component {
   render() {
     return (
       <div className="hiring">
-        <Container fixed>
-          <Typography variant="h1" className="hiring__header" color="primary">Director Hiring</Typography>
-          <Grid container>
-            <Grid item md={8} xs={12}>
+        <Container maxWidth="xl">
+          <Grid container spacing={4}>
+            <Grid item md={6} xs={12}>
+              <Typography variant="h3" className="hiring__header" color="primary">Become a Director</Typography>
               <div className="hiring__body">
-                <Typography variant="h6">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Donec nec nisi et nulla consectetur dictum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
-                posuere cubilia Curae; Donec consequat, ex sed aliquam iaculis, lectus erat viverra mi, sit amet vehicula
-                ipsum augue ac leo. Integer neque dui, rutrum nec mi vitae, consequat facilisis lorem. Nullam posuere nibh
-                eu consectetur accumsan. Cras ultrices non sapien sit amet sagittis. Nunc pharetra id est sit amet porttitor.
-                 Cras imperdiet nulla lacus, ullamcorper porttitor nisl vulputate quis. Maecenas ut rutrum metus.
-                  Vivamus efficitur enim sed est efficitur ullamcorper vel feugiat odio. Vestibulum ante ipsum primis in
-                   faucibus orci luctus et ultrices posuere cubilia Curae;
+                <Typography variant="h6">The Marketing Group offers a variety of Director positions every year to
+                empower students to unleash their pink sheep. Apply now and work together with like-minded
+                individuals to execute our plans for this year!
           </Typography>
               </div>
+              <div className="hiring__deadline">
+                <Typography className="hiring__deadline__text" variant="subtitle1" color="primary">Due April 8th!
+                </Typography>
+              </div>
+              <Grid item md={4} xs={12}>
+                <div className="hiring__linkContainer">
+                  <Typography className="hiring__link">
+                    <Link href="#" variant="subtitle2" color="inherit">
+                      Explore Director Positions
+                  </Link>
+                  </Typography>
+                </div>
+              </Grid>
             </Grid>
-            <Grid item md={4}>
+            <Grid item md={6} xs={12}>
+              <Typography variant="h3" className="hiring__header" color="primary">Become a Senior</Typography>
+              <div className="hiring__body">
+                <Typography variant="h6">The Marketing Group hires new Presidents and Vice Presidents every year. These
+                leadership positions are tailored for students who truly want to make a difference and take their
+                undergraduate experience to the next level.
+          </Typography>
+              </div>
+              <div className="hiring__deadline">
+                <Typography className="hiring__deadline__text" variant="subtitle1" color="primary">Coming soon!
+                </Typography>
+              </div>
+              <Grid item md={4} xs={12}>
+                <div className="hiring__linkContainer">
+                  <Typography className="hiring__link">
+                    <Link href="#" variant="subtitle2" color="inherit">
+                      Explore Senior Positions 
+                  </Link>
+                  </Typography>
+                </div>
+              </Grid>
             </Grid>
           </Grid>
-          <div className="hiring__deadline">
-            <Typography variant="subtitle1" color="primary">Deadline: late march</Typography>
-          </div>
-          <Grid item md={4} xs={12}>
-            <div className="hiring__box">
-              <Typography variant="subtitle2">Role: Full Stack Developer</Typography>
-              <Typography variant="subtitle2">Description: Post memes</Typography>
-            </div>
-          </Grid>
-          <Grid item md={4} xs={12}>
-            <Typography className="hiring__link">
-              <Link href="#" variant="subtitle2" color="inherit">
-                Application Form
-            </Link>
-            </Typography>
-          </Grid>
+          <HiringSlide />
         </Container>
-      </div>
+      </div >
     );
   }
 }

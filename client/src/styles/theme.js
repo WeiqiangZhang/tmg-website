@@ -1,6 +1,9 @@
 import { createMuiTheme } from '@material-ui/core/styles';
 import UniSansThin from 'fonts/uni-sans.thin-caps.otf';
+import UniSansItalic from 'fonts/uni-sans.heavy-italic-caps.otf';
+import UniSansItalicThin from 'fonts/uni-sans.thin-italic-caps.otf';
 import UniSans from 'fonts/uni-sans.heavy-caps.otf';
+import FuturaPTCondMedium from 'fonts/FuturaPTCondMedium.otf';
 import { constants } from './constants';
 
 const unisans = {
@@ -15,6 +18,30 @@ const unisans = {
   `,
 };
 
+const unisansi = {
+  fontFamily: 'UniSansItalic',
+  fontStyle: 'normal',
+  fontDisplay: 'swap',
+  fontWeight: 400,
+  src: `
+    local('UniSansItalic'),
+    local('UniSansItalic-Regular'),
+    url(${UniSansItalic}) format('opentype')
+  `,
+};
+
+const unisansit = {
+  fontFamily: 'UniSansItalicThin',
+  fontStyle: 'normal',
+  fontDisplay: 'swap',
+  fontWeight: 400,
+  src: `
+    local('UniSansItalicThin'),
+    local('UniSansItalicThin-Regular'),
+    url(${UniSansItalicThin}) format('opentype')
+  `,
+};
+
 const unisanst = {
   fontFamily: 'UniSansThin',
   fontStyle: 'normal',
@@ -24,6 +51,18 @@ const unisanst = {
     local('UniSansThin'),
     local('UniSansThin-Regular'),
     url(${UniSansThin}) format('opentype')
+  `
+};
+
+const futuramedium = {
+  fontFamily: 'FuturaPTCondMedium',
+  fontStyle: 'normal',
+  fontDisplay: 'swap',
+  fontWeight: 400,
+  src: `
+    local('FuturaPTCondMedium'),
+    local('FuturaPTCondMedium-Regular'),
+    url(${FuturaPTCondMedium}) format('opentype')
   `
 };
 
@@ -52,7 +91,7 @@ export default createMuiTheme({
     },
   },
   typography: {
-    fontFamily: 'UniSans, UniSansThin',
+    fontFamily: 'UniSans, UniSansThin, UniSansItalic, UniSansItalicThin',
     fontWeightLight: 300,
     fontWeightRegular: 500,
     fontWeightMedium: 700,
@@ -88,8 +127,13 @@ export default createMuiTheme({
   overrides: {
     MuiCssBaseline: {
       '@global': {
-        '@font-face': [unisans, unisanst]
+        '@font-face': [unisans, unisanst, unisansi, futuramedium, unisansit],
+        '@media (min-width:100rem)': {
+          '.MuiContainer-maxWidthXl': {
+            maxWidth: '100rem'
+          },
+        }
       }
-    }
+    },
   }
 });

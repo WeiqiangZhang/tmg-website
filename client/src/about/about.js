@@ -8,7 +8,7 @@ class About extends React.Component {
   render() {
     return (
       <div className="about">
-        <Container fixed>
+        <Container maxWidth="xl">
           <Typography variant="h1" className="about__header" color="primary">About TMG</Typography>
           <Grid container>
             <Grid item md={8} xs={12}>

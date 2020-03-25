@@ -4,8 +4,23 @@
 }
 
 @font-face {
+  font-family: 'UniSansItalic';
+  src: local('UniSansItalic'), url(./fonts/uni-sans.heavy-italic-caps.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'UniSansItalicThin';
+  src: local('UniSansItalicThin'), url(./fonts/uni-sans.thin-italic-caps.otf) format('opentype');
+}
+
+@font-face {
   font-family: 'UniSansThin';
   src: local('UniSansThin'), url(./fonts/uni-sans.thin-caps.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'FuturaPTCondMedium';
+  src: local('FuturaPTCondMedium'), url(./fonts/FuturaPTCondMedium.otf) format('opentype');
 }
 
 body {

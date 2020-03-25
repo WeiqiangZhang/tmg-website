@@ -1,0 +1,44 @@
+@import 'styles/palette.scss';
+
+.hiringSlide {
+    border: 0.125rem solid $grey3;
+    padding: 1.5rem;
+    margin-top: 2.5rem;
+    &__image {
+        height: 100%;
+        width: 100%;
+    }
+    &__quote {
+        height: 100%; 
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    &__role {
+        margin-top: 1.5rem;
+    }
+}
+
+.slick-dots li {
+    height: 4rem;
+    width: 4rem;
+}
+
+.slick-dots .slick-active {
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    box-shadow: 0 0 1rem 0 $secondary;
+    transition: box-shadow 0.25s ease-in;
+
+}
+
+.slider {
+    height: 100%;
+    width: 100%;
+    &__dot {
+        height: 100%;
+        width: 100%;
+        border-radius: 50%;
+    }
+}
