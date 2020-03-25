@@ -1,6 +1,6 @@
 import React from 'react';
 import Slider from "react-slick";
-import { Container, Grid, Link, withStyles } from '@material-ui/core';
+import { Grid, withStyles } from '@material-ui/core';
 import { Typography } from '@material-ui/core';
 
 import "slick-carousel/slick/slick.css";

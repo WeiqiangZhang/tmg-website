@@ -1,6 +1,5 @@
 import React from 'react';
-import { Container, Grid, Button } from '@material-ui/core';
-import { Typography } from '@material-ui/core';
+import { Container, Button } from '@material-ui/core';
 
 import './styles/admin.scss';
 
