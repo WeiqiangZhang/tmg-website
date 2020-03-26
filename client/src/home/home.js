@@ -10,7 +10,7 @@ class Home extends React.Component {
     return (
       <div className="home">
         <Banner />
-        <Container maxWidth="xl">
+        <Container maxWidth="lg">
           <Sponsor />
         </Container>
       </div>

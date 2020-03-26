@@ -1,13 +1,19 @@
 import React from 'react';
-import { Container, Grid, Link } from '@material-ui/core';
+import { Container, Grid } from '@material-ui/core';
 import { Typography } from '@material-ui/core';
+import {
+  withRouter,
+  Link
+} from "react-router-dom";
 
 import HiringSlide from './hiringslide';
 
 import './styles/hiring.scss';
 
+
 class Hiring extends React.Component {
   render() {
+    const { history } = this.props;
     return (
       <div className="hiring">
         <Container maxWidth="xl">
@@ -24,13 +30,15 @@ class Hiring extends React.Component {
                 <Typography className="hiring__deadline__text" variant="subtitle1" color="primary">Due April 8th!
                 </Typography>
               </div>
-              <Grid item md={4} xs={12}>
+              <Grid item xs={12}>
                 <div className="hiring__linkContainer">
-                  <Typography className="hiring__link">
-                    <Link href="#" variant="subtitle2" color="inherit">
+                  <Link to={{
+                    pathname: `${history.location.pathname}/director`,
+                  }}>
+                    <Typography variant="subtitle1" className="hiring__link">
                       Explore Director Positions
-                  </Link>
                   </Typography>
+                  </Link>
                 </div>
               </Grid>
             </Grid>
@@ -46,13 +54,15 @@ class Hiring extends React.Component {
                 <Typography className="hiring__deadline__text" variant="subtitle1" color="primary">Coming soon!
                 </Typography>
               </div>
-              <Grid item md={4} xs={12}>
+              <Grid item xs={12}>
                 <div className="hiring__linkContainer">
-                  <Typography className="hiring__link">
-                    <Link href="#" variant="subtitle2" color="inherit">
-                      Explore Senior Positions 
-                  </Link>
+                  <Link to={{
+                    pathname: `${history.location.pathname}/senior`,
+                  }}>
+                    <Typography variant="subtitle1" className="hiring__link">
+                      Explore Senior Positions
                   </Typography>
+                  </Link>
                 </div>
               </Grid>
             </Grid>
@@ -64,4 +74,4 @@ class Hiring extends React.Component {
   }
 }
 
-export default Hiring;
+export default withRouter(Hiring);

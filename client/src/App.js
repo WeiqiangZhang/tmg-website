@@ -3,6 +3,8 @@ import { ThemeProvider } from '@material-ui/core/styles';
 import Navigation from './container/navigation';
 import Home from './home';
 import Hiring from './hiring';
+import Info from './hiring/info';
+import Director from './hiring/director';
 import About from './about';
 import Team from './team';
 import Social from './container/social';
@@ -45,16 +47,22 @@ class App extends React.Component {
         {<div className="app-container">
           <Navigation routeUpdate={(page) => this.routeUpdate(page, history)} />
           <Switch>
-            <Route path="/about">
+            <Route path="/about" exact>
               <About />
             </Route>
-            <Route path="/hiring">
+            <Route path="/hiring" exact>
               <Hiring />
             </Route>
-            <Route path="/team">
+            <Route path="/hiring/director" exact>
+              <Director />
+            </Route>
+            <Route path="/hiring/director/info" exact >
+              <Info />
+            </Route>
+            <Route path="/team" exact>
               <Team />
             </Route>
-            <Route path="/admin">
+            <Route path="/admin" exact>
               <Admin />
             </Route>
             <Route path="/">

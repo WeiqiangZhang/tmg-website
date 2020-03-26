@@ -10,7 +10,7 @@ class Social extends React.Component {
   render() {
     return (
       <div className="social">
-        <Container maxWidth="xl">
+        <Container maxWidth="lg">
           <Grid container spacing={4} justify="center" alignItems="center">
             <Grid item>
               <a href="https://www.facebook.com/HomeOfThePinkSheep" target="_blank" rel="noopener noreferrer">

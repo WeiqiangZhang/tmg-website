@@ -1,0 +1,19 @@
+@import 'styles/palette.scss';
+
+.director {
+    margin: 4rem 0;
+    &__header {
+        text-align: center;
+    }
+
+    &__link {
+        color: $blue;
+    }
+
+    &__role {
+        padding: 1.5rem;
+        &:not(:last-child) {
+            border-bottom: 0.125rem solid $grey3;
+        }
+    }
+}

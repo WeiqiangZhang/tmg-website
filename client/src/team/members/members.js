@@ -39,7 +39,7 @@ function Members(props) {
             const image = process.env.PUBLIC_URL + `/assets/${value}_${index}_${tab}.png`;
             const memberObj = memberObject[tab][value];
             return (
-              <Grid item md={6} xs={12}>
+              <Grid item md={6} xs={12} key={index}>
                 <Member image={image} name={memberObj.name} />
               </Grid>
             )

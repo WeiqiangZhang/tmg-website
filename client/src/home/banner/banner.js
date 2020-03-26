@@ -6,6 +6,8 @@ import './styles/banner.scss';
 class Banner extends React.Component {
   constructor(props) {
     super(props);
+    this.intervalId1 = {};
+    this.intervalId2 = {};
     this.state = { text: '', count: 0, textCount: 0 }
   }
   componentDidMount() {
@@ -14,18 +16,19 @@ class Banner extends React.Component {
 
 
   componentWillUnmount() {
-    clearInterval(this.typeWriter());
+    clearInterval(this.intervalId1);
+    clearInterval(this.intervalId2);
   }
 
   typeWriter() {
     const texts = ["the herd", "the home of marketing", "TMG"]
-    setInterval(() => {
+    this.intervalId1 = setInterval(() => {
       this.setState(prevState => ({
         count: (prevState.count === texts.length - 1 ? 0 : prevState.count + 1),
         textCount: 1
       }));
     }, 5000);
-    setInterval(() => {
+    this.intervalId2 = setInterval(() => {
       const { count, textCount } = this.state;
       if (textCount !== texts[count].length + 1) {
         this.setState(prevState => ({

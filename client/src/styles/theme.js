@@ -91,7 +91,7 @@ export default createMuiTheme({
     },
   },
   typography: {
-    fontFamily: 'UniSans, UniSansThin, UniSansItalic, UniSansItalicThin',
+    fontFamily: 'UniSans, UniSansThin, UniSansItalic, UniSansItalicThin, FuturaPTCondMedium',
     fontWeightLight: 300,
     fontWeightRegular: 500,
     fontWeightMedium: 700,
@@ -111,17 +111,18 @@ export default createMuiTheme({
       fontSize: '1.25rem',
     },
     subtitle2: {
-      fontSize: '1rem',
+      fontFamily: 'UniSansThin',
+      fontSize: '1.25rem',
     },
     body1: {
-      fontFamily: 'UniSansThin',
-      fontSize: '1rem',
-      fontWeight: 700
+      fontFamily: 'FuturaPTCondMedium',
+      fontSize: '1.5rem',
+      fontWeight: 600
     },
     body2: {
-      fontFamily: 'UniSansThin',
-      fontSize: '1rem',
-      fontWeight: 700
+      fontFamily: 'FuturaPTCondMedium',
+      fontSize: '1.25rem',
+      fontWeight: 400
     }
   },
   overrides: {

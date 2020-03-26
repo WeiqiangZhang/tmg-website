@@ -17,7 +17,7 @@ function Team(props) {
   const [value, setValue] = React.useState(0);
   return (
     <div className="team">
-      <Container maxWidth="xl">
+      <Container maxWidth="lg">
         <Typography variant="h1" className="team__header" color="primary">Meet our Team</Typography>
         <div className="team__container">
           <Tabs

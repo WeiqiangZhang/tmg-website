@@ -11,8 +11,8 @@ class HiringSlide extends React.Component {
   render() {
     const settings = {
       arrows: false,
-      autoplay: false,
-      autoplaySpeed: 3000,
+      autoplay: true,
+      autoplaySpeed: 5000,
       dots: true,
       customPaging: i => (
         <div className="slider">

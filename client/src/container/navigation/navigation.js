@@ -27,7 +27,7 @@ function Navigation(props) {
   const { routeUpdate } = props;
   return (
     <div className="navigation">
-    <Container maxWidth="xl">
+    <Container maxWidth="lg">
       <Grid container justify="space-between" alignItems="center">
         <Grid item>
           <img className="navigation__logo" src={logo} alt="Home" onClick={() => {
