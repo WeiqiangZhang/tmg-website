@@ -21,7 +21,7 @@ class Hiring extends React.Component {
     })(Typography);
 
     const { history } = this.props;
-
+    
     return (
       <div className="hiring">
         <Container maxWidth="xl">
@@ -41,7 +41,7 @@ class Hiring extends React.Component {
               <Grid item xs={12}>
                 <div className="hiring__linkContainer">
                   <Link to={{
-                    pathname: `${history.location.pathname}/director`,
+                    pathname: `${history.location.pathname}director`,
                   }}>
                     <Typography variant="subtitle1" className="hiring__link">
                       Explore Director Positions

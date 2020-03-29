@@ -17,7 +17,8 @@ class Info extends React.Component {
             <div className="info__apply__header">
               <Typography variant="h5">{`Roles Open: ${open}`}</Typography>
             </div>
-            <Button variant="contained" color="primary">Apply Now</Button>
+            <Button variant="contained" color="primary" onClick={() => 
+              window.open("https://form.jotform.com/200877794266267", "_blank")}>Apply Now</Button>
           </div>
           <div className="info__description">
             <Typography variant="body1">{description}</Typography>

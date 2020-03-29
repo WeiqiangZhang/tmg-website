@@ -2,19 +2,16 @@ export default {
   events: {
     name: "Events Director",
     open: "2",
-    description: "The Marketing Director is responsible for the branding of TMG, as well as all campaigns to be executed throughout the year. Working closely with the Vice-President of Communications, this position will be leading the charge when it comes to developing marketing materials (either developed in-house or outsourced for internal and/or external purposes), creating a fundamental plan for promotions throughout the year and digital advertisements that attract students, alumni and corporate partners.",
-    qualification: ["Create a year-long marketing plan that incorporates various campaigns and brand activations",
-      "Work with the Vice President of Communications to maintain a unique online brand throughout all promotions",
-      "Work with the Social Media Director to ensure that the club has a consistent and regular level of communication",   
-      "Develop simple, effective marketing materials and snackable content for internal and external purposes",
-      "Launch strategic partnership campaigns that raise awareness about sponsors and the overall delegate experience"],
-    skill: [
-      "Creativity and the ability to consistently think outside the box",
-      "Thorough understanding of TMG's target audience",
-      "Exceptional time management skills to ensure deadlines are met",
-      "Strong ability to thrive under pressure and multitask",
-      "Prior experience in design or video-editing programs is an asset*"
-    ],
+    description: "The Events Director is responsible for the day to day logistics of TMG events and year-long timeline. Working closely with the Vice-President of Operations, this position will be facilitating both internal workshops and the external case competition to ensure that all stakeholders are satisfied with relevant projects.",
+    qualification: ["Develop a year-long plan of events for the 2020/2021 TMG team",
+    "Responsible for the logistics of both internal and external events",
+    "Plan the structure of TMG’s annual case competition",
+    "Plan the structures of TMG’s regular internal workshops",
+    "Collaborate with the Management Co-Op office to facilitate internal events.",],
+    skill: ["Creativity and the ability to consistently think outside the box",
+    "Exceptional time management skills to ensure deadlines are met",
+    "Strong ability to thrive under pressure and multitask",
+    "Prior experience in Excel is an asset.",],
     extra: ""
   },
   project: {

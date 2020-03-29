@@ -54,13 +54,13 @@ class App extends React.Component {
             <Route path="/hiring" exact>
               <Hiring />
             </Route>
-            <Route path="/hiring/director" exact>
+            <Route path="/director" exact>
               <Director />
             </Route>
             <Route path="/hiring/senior" exact>
               <Senior />
             </Route>
-            <Route path="/hiring/director/info" exact >
+            <Route path="/director/info" exact >
               <Info />
             </Route>
             <Route path="/team" exact>
@@ -70,7 +70,7 @@ class App extends React.Component {
               <Admin />
             </Route>
             <Route path="/">
-              <Home />
+              <Hiring />
             </Route>
           </Switch>
           <Social />

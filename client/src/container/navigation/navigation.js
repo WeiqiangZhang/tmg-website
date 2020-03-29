@@ -27,7 +27,7 @@ function Navigation(props) {
   const { routeUpdate } = props;
   return (
     <div className="navigation">
-    <Container maxWidth="lg">
+    <Container maxWidth="xl">
       <Grid container justify="space-between" alignItems="center">
         <Grid item>
           <img className="navigation__logo" src={logo} alt="Home" onClick={() => {
@@ -35,7 +35,7 @@ function Navigation(props) {
             setValue(null);
             }}/>
         </Grid>
-        <Grid item>
+        {/* <Grid item>
           <BottomNavigation
             value={value}
             onChange={(event, newValue) => {
@@ -47,7 +47,7 @@ function Navigation(props) {
             <BottomNavigationAction classes={classes} label="About" value='about'/>
             <BottomNavigationAction classes={classes} label="Leadersheep" value='team'/>
           </BottomNavigation>
-        </Grid>
+        </Grid> */}
       </Grid>
       </Container>
     </div>
