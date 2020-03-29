@@ -108,4 +108,12 @@ export default {
     "Strong ability to thrive under pressure and multitask",],
     extra: "* Please provide a writing sample with your application."
   },
+  fullstack: {
+    name: "Full Stack Developer: Position Filled",
+    open: "0",
+    description: "The Full Stack Developer will work closely with the TMG senior team to develop, manage and continually update the club website using prior technical expertise.",
+    qualification: [],
+    skill: [],
+    extra: ""
+  },
 }
