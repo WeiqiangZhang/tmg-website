@@ -20,7 +20,7 @@ class Director extends React.Component {
             const memberObj = posObj[value];
             return (
               <div className="director__role" key={index}>
-                <Link to={{
+                <Link className="director__underline" to={{
                   pathname: `${history.location.pathname}/info`,
                   ...memberObj
                 }}>

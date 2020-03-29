@@ -13,17 +13,17 @@ class Info extends React.Component {
       <div className="info">
         <Container maxWidth="lg">
           <div className="info__apply">
-            <Typography variant="h3" color="primary">{name}</Typography>
+            <Typography variant="h2" color="primary">{name}</Typography>
             <div className="info__apply__header">
               <Typography variant="h5">{`Roles Open: ${open}`}</Typography>
             </div>
             <Button variant="contained" color="primary">Apply Now</Button>
           </div>
           <div className="info__description">
-            <Typography variant="subtitle2">{description}</Typography>
+            <Typography variant="body1">{description}</Typography>
           </div>
           <div className="info__qualification">
-            <Typography variant="body1" color="primary">Qualifications:</Typography>
+            <Typography variant="body1" color="primary">Responsibilities:</Typography>
             <ul>
             {
               qualification.map((value, index) => {

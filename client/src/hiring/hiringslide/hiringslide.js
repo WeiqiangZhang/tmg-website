@@ -12,11 +12,11 @@ class HiringSlide extends React.Component {
     const settings = {
       arrows: false,
       autoplay: true,
-      autoplaySpeed: 5000,
+      autoplaySpeed: 10000,
       dots: true,
       customPaging: i => (
         <div className="slider">
-          <img className="slider__dot" src={`/assets/slide${i}.png`} alt={`slide ${i}`} />
+          <img className="slider__dot" src={`/assets/slide${i}_icon.png`} alt={`slide ${i}`} />
         </div>),
       appendDots: dots => <ul>{dots}</ul>,
     };
@@ -29,6 +29,9 @@ class HiringSlide extends React.Component {
       subtitle2: {
         display: "inline",
         fontFamily: "UniSansItalicThin"
+      },
+      body1: {
+        fontSize: "3rem"
       }
     })(Typography);
     return (
@@ -41,10 +44,9 @@ class HiringSlide extends React.Component {
               </Grid>
               <Grid item md={6} xs={12}>
                 <div className="hiringSlide__quote">
-                  <Typography variant="h6">"The Marketing Group  is a student organization that's one cut above
-                  the rest. We're looking for talented and passionate individuals to help us continue to stand
-                  out among the herd."
-                  </Typography>
+                  <StyledSubtitle variant="body1">"The Marketing Group is back and better than ever! 
+                  Help us foster an inclusive marketing community at UTSC and join the herd."
+                  </StyledSubtitle>
                   <div className="hiringSlide__role">
                     <StyledSubtitle variant="subtitle1">-Angela Yang,
                     </StyledSubtitle>
@@ -62,10 +64,10 @@ class HiringSlide extends React.Component {
               </Grid>
               <Grid item md={6} xs={12}>
                 <div className="hiringSlide__quote">
-                  <Typography variant="h6">"The Marketing Group  is a student organization that's one cut above
+                  <StyledSubtitle variant="body1">"The Marketing Group is a student organization that's one cut above
                   the rest. We're looking for talented and passionate individuals to help us continue to stand
                   out among the herd."
-          </Typography>
+          </StyledSubtitle>
                   <div className="hiringSlide__role">
                     <StyledSubtitle variant="subtitle1">-Arman Nagra,
                     </StyledSubtitle>
