@@ -8,7 +8,7 @@ import './styles/info.scss';
 
 class Info extends React.Component {
   render() {
-    const { name, open, description, qualification, skill, extra } = this.props.location;
+    const { name, open, description, qualification, skill, extra } = this.props.info;
     return (
       <div className="info">
         <Container maxWidth="lg">

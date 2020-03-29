@@ -11,7 +11,7 @@ import './styles/director.scss';
 class Director extends React.Component {
   render() {
     const positions = ["events", "project", "marketing", "social", "corporate", "finance", "curriculum", "fullstack"];
-    const { history } = this.props;
+    const { history, onSetInfo } = this.props;
     return (
       <div className="director">
         <Container maxWidth="lg">
@@ -21,9 +21,8 @@ class Director extends React.Component {
             return (
               <div className="director__role" key={index}>
                 {memberObj.open != "0" && <Link className="director__underline" to={{
-                  pathname: `${history.location.pathname}/info`,
-                  ...memberObj
-                }}>
+                  pathname: `${history.location.pathname}/info`
+                }} onClick={() => onSetInfo(memberObj)}>
                   <Typography variant="subtitle1" className="director__link">{memberObj.name}</Typography>
                 </Link>}
                 {memberObj.open == "0" &&
