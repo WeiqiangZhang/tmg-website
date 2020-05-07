@@ -1,14 +1,13 @@
 import React from 'react';
 import Slider from "react-slick";
 import { Grid, withStyles } from '@material-ui/core';
-import { Typography } from '@material-ui/core';
+import { Typography, useMediaQuery } from '@material-ui/core';
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './styles/hiringslide.scss';
 
-class HiringSlide extends React.Component {
-  render() {
+function HiringSlide() {
     const settings = {
       arrows: false,
       autoplay: true,
@@ -19,8 +18,16 @@ class HiringSlide extends React.Component {
           <img className="slider__dot" src={`/assets/slide${i}_icon.png`} alt={`slide ${i}`} />
         </div>),
       appendDots: dots => <ul>{dots}</ul>,
+      responsive: [
+        {
+          breakpoint: 959,
+          settings: {
+            dots: false
+          }
+        },
+      ]
     };
-
+    const matches = useMediaQuery('(max-width:45rem)');
     const StyledSubtitle = withStyles({
       subtitle1: {
         display: "inline",
@@ -31,7 +38,7 @@ class HiringSlide extends React.Component {
         fontFamily: "UniSansItalicThin"
       },
       body1: {
-        fontSize: "3rem"
+        fontSize: matches ? "2rem" : "3rem"
       }
     })(Typography);
     return (
@@ -81,7 +88,6 @@ class HiringSlide extends React.Component {
         </Slider>
       </div>
     );
-  }
 }
 
 export default HiringSlide;
