@@ -1,4 +1,3 @@
-
 import actionTypes from '../actionTypes';
 
 export const setInfo = (info) => {
