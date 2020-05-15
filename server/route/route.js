@@ -5,15 +5,19 @@ const jwt = require('jsonwebtoken');
 
 const router = express.Router();
 
-router.post('/signup', passport.authenticate('signup', { session : false }) , async (req, res, next) => {
-  res.json({
-    message : 'Signup successful',
-    user : req.user
-  });
+// router.post('/signup', passport.authenticate('signup', { session : false }) , async (req, res, next) => {
+//   res.json({
+//     message : 'Signup successful',
+//     user : req.user
+//   });
+// });
+
+router.get('/', async (req, res, next) => {
+  res.send('hello, world!');
 });
 
 router.post('/login', async (req, res, next) => {
-  passport.authenticate('login', async (err, user, info) => {     
+  passport.authenticate('login', { session: false }, async (err, user, info) => {
     try {
       if(err){
         return next(err);
@@ -29,14 +33,6 @@ router.post('/login', async (req, res, next) => {
       return next(error);
     }
   })(req, res, next);
-});
-
-router.get('/data', (req, res, next) => {
-  res.json({
-    message : 'Here is your data',
-    user : req.user,
-    token : req.query.jwt
-  })
 });
 
 module.exports = router;

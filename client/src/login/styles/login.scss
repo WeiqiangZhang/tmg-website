@@ -1,0 +1,23 @@
+@import 'styles/palette.scss';
+
+.login {
+    margin: 2.5rem 0 5rem;
+    &__container {
+        margin: auto;
+        border: 0.125rem solid $grey3;
+        padding: 1.5rem;
+        &__form {
+            display: flex;
+            flex-direction: column;
+            &__label {
+                margin-bottom: 1rem;
+            }
+            &__input {
+                height: 2rem;
+            }
+            &__submit {
+                max-width: 4rem;
+            }
+        }
+    }
+}

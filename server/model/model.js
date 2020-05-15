@@ -1,6 +1,9 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const Schema = mongoose.Schema;
+const connectionString = `mongodb+srv://tmgAdmin:${process.env.MONGO_PASSWORD}@cluster0-4tue2.azure.mongodb.net/tmg?retryWrites=true&w=majority`;
+mongoose.set('useCreateIndex', true);
+mongoose.connect(connectionString, { useUnifiedTopology: true, useNewUrlParser: true });
 
 const UserSchema = new Schema({
   username : {

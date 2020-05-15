@@ -1,2 +1,7 @@
 .env
 node_modules
+ca.crt
+ca.key
+ia.crt
+ia.csr
+ia.key

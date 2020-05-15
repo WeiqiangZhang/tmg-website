@@ -1,12 +1,23 @@
 import actionTypes from "../actionTypes";
 import axios from "axios";
 
-export const login = (username, password) => {
+export const login = (username, password, history) => {
   return (dispatch) => {
-    axios
-      .post("https://127.0.0.1:3001/api/login", { username, password })
+    dispatch({type: actionTypes.SET_LOGIN_LOADING,});
+    axios({
+      method: "POST",
+      url: "https://localhost:3001/login",
+      data: { username: username, password: password },
+    })
       .then((res) => {
-        console.log(res);
+        dispatch({type: actionTypes.UNSET_LOGIN_LOADING,});
+        dispatch({type: actionTypes.SET_AUTHENTICATED,});
+        localStorage.setItem('jwt', JSON.stringify(res.data.token));
+        history.push('/admin');
+      })
+      .catch((err) => {
+        dispatch({type: actionTypes.UNSET_LOGIN_LOADING,});
+        console.log(err);
       });
   };
 };
