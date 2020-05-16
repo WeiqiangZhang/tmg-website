@@ -20,8 +20,6 @@ passport.use('login', new localStrategy({
   usernameField : 'username',
   passwordField : 'password'
 }, async (username, password, done) => {
-  console.log(username);
-  console.log(password);
   try {
     const user = await UserModel.findOne({ username: username });
     if(!user){
