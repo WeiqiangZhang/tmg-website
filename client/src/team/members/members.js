@@ -5,7 +5,7 @@ import './styles/members.scss';
 
 function Members(props) {
   const { tab } = props;
-  const memberNames = [["Angela", "Arman"], ["Weiqiang"], ["Weiqiang"], ["Dewan"]]
+  const memberNames = [["Angela", "Arman"], ["Amelia", "Isha", "Elya", "George"], ["Dewan"]]
   const memberObject = {
     0: {
       Angela: {
@@ -16,16 +16,25 @@ function Members(props) {
       }
     },
     1: {
-      Weiqiang: {
-        name: "Weiqiang Zhang"
+      Amelia: {
+        name: "Amelia Helpard"
+      },
+      Isha: {
+        name: "Isha Patel"
+      },
+      Elya: {
+        name: "Elya Diaffar"
+      },
+      George: {
+        name: "George Li"
       }
     },
+    // 2: {
+    //   Weiqiang: {
+    //     name: "Weiqiang Zhang"
+    //   }
+    // },
     2: {
-      Weiqiang: {
-        name: "Weiqiang Zhang"
-      }
-    },
-    3: {
       Dewan: {
         name: "Dewan"
       }

@@ -11,7 +11,7 @@ class Home extends React.Component {
       <div className="home">
         <Banner />
         <Container maxWidth="lg">
-          <Sponsor />
+          {/* <Sponsor /> */}
         </Container>
       </div>
     );
