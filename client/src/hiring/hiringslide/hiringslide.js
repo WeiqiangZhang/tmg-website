@@ -38,7 +38,8 @@ function HiringSlide() {
         fontFamily: "UniSansItalicThin"
       },
       body1: {
-        fontSize: matches ? "2rem" : "3rem"
+        fontSize: matches ? "2rem" : "3rem",
+        lineHeight: 1,
       }
     })(Typography);
     return (
