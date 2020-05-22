@@ -19,8 +19,8 @@
 }
 
 @font-face {
-  font-family: 'FuturaPTCondMedium';
-  src: local('FuturaPTCondMedium'), url(./fonts/FuturaPTCondMedium.otf) format('opentype');
+  font-family: 'Helvetica';
+  src: local('Helvetica'), url(./fonts/helvetica.ttf) format('ttf');
 }
 
 body {

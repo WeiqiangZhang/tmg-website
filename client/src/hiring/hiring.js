@@ -41,10 +41,10 @@ function Hiring(props) {
           </Typography>
               </div>
               <div className="hiring__deadline">
-                <StyledFont variant="subtitle1" color="primary">Due April 3rd, 11:59 pm
+                <StyledFont variant="subtitle1" color="primary">All Positions Filled
                 </StyledFont>
               </div>
-              <Grid item xs={12}>
+              {/* <Grid item xs={12}>
                 <div className="hiring__linkContainer">
                   <Link to={{
                     pathname: `${history.location.pathname}director`,
@@ -54,7 +54,7 @@ function Hiring(props) {
                   </Typography>
                   </Link>
                 </div>
-              </Grid>
+              </Grid> */}
             </Grid>
             <Grid item md={6} xs={12}>
               <StyledFont variant="h2" className="hiring__header" color="primary">Become a Senior</StyledFont>
