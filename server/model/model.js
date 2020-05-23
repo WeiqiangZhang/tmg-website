@@ -17,6 +17,13 @@ const UserSchema = new Schema({
   }
 });
 
+const CarouselSchema = new Schema({
+  image : { type: Buffer, contentType: String },
+  blurb : { type : String, required : true },
+  name : { type : String, required : true },
+  role: { type : String, required : true }
+});
+
 // salt hash function for password (salt at 10), signup not used currently
 // UserSchema.pre('save', async function(next){
 //   const hash = await bcrypt.hash(this.password, 10);
@@ -30,5 +37,6 @@ UserSchema.methods.validPassword = async function(password){
 }
 
 const UserModel = mongoose.model('admin', UserSchema);
+const CarouselModel = mongoose.model('carousel', CarouselSchema);
 
-module.exports = UserModel;
+module.exports = {UserModel: UserModel, CarouselModel: CarouselModel};

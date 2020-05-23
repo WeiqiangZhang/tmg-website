@@ -16,7 +16,7 @@ const JwtStrategy = passportJWT.Strategy;
 const ExtractJwt = passportJWT.ExtractJwt;
 
 const opts = {
-  jwtFromRequest: ExtractJwt.fromHeader("token"),
+  jwtFromRequest: ExtractJwt.fromAuthHeaderWithScheme('Bearer'),
   secretOrKey: process.env.SECRET_OR_KEY,
 }
 
@@ -35,9 +35,10 @@ const route = require('./route/route');
 const authRoute = require('./authRoute/authRoute');
 
 app.use(cors());
-app.use(bodyParser.json());
+app.use(bodyParser.json({limit: '10mb', extended: true}));
+app.use(bodyParser.urlencoded({limit: '10mb', extended: true}));
 app.use('/', route);
-app.use('/user', authRoute);
+app.use('/carousel', authRoute);
 
 const httpsOptions = {
   cert: fs.readFileSync(path.join(__dirname, 'ca.crt')),

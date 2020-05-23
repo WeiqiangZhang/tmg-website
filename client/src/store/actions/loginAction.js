@@ -12,8 +12,8 @@ export const login = (username, password, history) => {
       .then((res) => {
         dispatch({type: actionTypes.UNSET_LOGIN_LOADING,});
         dispatch({type: actionTypes.SET_AUTHENTICATED,});
-        localStorage.setItem('jwt', JSON.stringify(res.data.token));
-        history.push('/admin');
+        localStorage.setItem('jwt', res.data.token);
+        history.push('/');
       })
       .catch((err) => {
         dispatch({type: actionTypes.UNSET_LOGIN_LOADING,});

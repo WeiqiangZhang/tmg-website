@@ -1,7 +1,7 @@
 
 const passport = require('passport');
 const localStrategy = require('passport-local').Strategy;
-const UserModel = require('../model/model');
+const {UserModel} = require('../model/model');
 
 // No need for signup right now, may be useful later.
 // passport.use('signup', new localStrategy({
