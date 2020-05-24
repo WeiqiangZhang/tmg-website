@@ -8,4 +8,10 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(null, mapDispatchToProps)(Hiring);
+const mapStateToProps = state => {
+  return {
+    carousel: state.carouselReducer
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Hiring);

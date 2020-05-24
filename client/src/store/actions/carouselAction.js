@@ -12,7 +12,14 @@ export const uploadCarousel = (image, blurb, name, role) => {
       data: { image: image.image, blurb: blurb, name: name, role: role },
     })
       .then((res) => {
-        console.log(res.data)
+        let image = btoa(
+          new Uint8Array(res.data.image.data)
+            .reduce((data, byte) => data + String.fromCharCode(byte), '')
+        );
+        // TODO: Find a way to not hard code data type
+        const base64Image = `data:image/png;base64,${image}`;
+        const newSlide = {...res.data, image: base64Image}; 
+        dispatch({type: actionTypes.ADD_NEW_SLIDE, newSlide: newSlide});
       })
       .catch((err) => {
         console.log(err);

@@ -34,7 +34,8 @@ function Hiring(props) {
     },
   })(Typography);
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     props.upload(image, blurb, name, role);
   };
 
@@ -154,6 +155,10 @@ function Hiring(props) {
             </Button>
           </div>
         </form>
+        { props.carousel.slide.map((slide) => {
+          return (<img src={slide.image} />)
+        })
+        }
       </Container>
     </div>
   );
