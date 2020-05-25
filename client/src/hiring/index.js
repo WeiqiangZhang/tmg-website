@@ -4,13 +4,15 @@ import * as carouselActions from 'store/actions/carouselAction';
 
 const mapDispatchToProps = dispatch => {
   return {
+    get: () => dispatch(carouselActions.getCarousel()),
     upload: (image, blurb, name, role) => dispatch(carouselActions.uploadCarousel(image, blurb, name, role)),
   }
 }
 
 const mapStateToProps = state => {
   return {
-    carousel: state.carouselReducer
+    carousel: state.carouselReducer,
+    login: state.loginReducer,
   };
 };
 

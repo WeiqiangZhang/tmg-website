@@ -1,12 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Grid, withStyles } from "@material-ui/core";
 import {
   Typography,
   useMediaQuery,
   Button,
+  TextareaAutosize,
   Input,
   InputLabel,
+  CircularProgress,
+  Modal,
 } from "@material-ui/core";
+import AddCircle from "@material-ui/icons/AddCircle";
 import { withRouter, Link } from "react-router-dom";
 
 import HiringSlide from "./hiringslide";
@@ -18,11 +22,21 @@ function Hiring(props) {
   const [blurb, setBlurb] = useState("");
   const [name, setName] = useState("");
   const [role, setRole] = useState("");
-  const StyledSubtitle = withStyles({
-    subtitle1: {
-      fontFamily: "UniSansItalic",
+  const [modalOpen, setModalOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    if (!props.carousel.loaded) {
+      props.get();
+    }
+  }, []);
+  const StyledCircularProgress = withStyles({
+    root: {
+      margin: "auto",
+      display: "block",
     },
-  })(Typography);
+  })(CircularProgress);
+
   const { history } = props;
   const matches = useMediaQuery("(max-width:45rem)");
   const StyledFont = withStyles({
@@ -35,8 +49,15 @@ function Hiring(props) {
   })(Typography);
 
   const handleSubmit = (e) => {
+    setLoading(true);
     e.preventDefault();
-    props.upload(image, blurb, name, role);
+    props.upload(image, blurb, name, role)
+    setImage(0);
+    setBlurb("");
+    setName("");
+    setRole("");
+    setModalOpen(false);
+    setLoading(false);
   };
 
   const handleImage = (e) => {
@@ -117,48 +138,72 @@ function Hiring(props) {
             </div>
           </Grid>
         </Grid>
-        <HiringSlide />
-        <form onSubmit={handleSubmit}>
-          <div>
-            <InputLabel for="file">Image</InputLabel>
-            <div className="hiring__admin">
-              <Input type="file" name="file" onChange={handleImage} />
-            </div>
-            <InputLabel for="file">Blurb</InputLabel>
-            <div className="hiring__admin">
-              <Input
-                type="text"
-                name="blurb"
-                onChange={(e) => handleText(e, "blurb")}
-              />
-            </div>
-            <InputLabel for="file">Name</InputLabel>
-            <div className="hiring__admin">
-              <Input
-                type="text"
-                name="name"
-                onChange={(e) => handleText(e, "name")}
-              />
-            </div>
-            <InputLabel for="file">Role</InputLabel>
-            <div className="hiring__admin">
-              <Input
-                type="text"
-                name="role"
-                onChange={(e) => handleText(e, "role")}
-              />
-            </div>
+        {props.login.authenticated ||
+          (localStorage.getItem("jwt") && (
+            <React.Fragment>
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={() => setModalOpen(true)}
+                endIcon={<AddCircle />}
+              >
+                <Typography variant="body1">New Slide</Typography>
+              </Button>
+              <Modal
+                open={modalOpen}
+                onClose={() => setModalOpen(false)}
+                aria-labelledby="new-slide-modal"
+                aria-describedby="new-slide-modal"
+              >
+                {
+                  <form onSubmit={handleSubmit} className="hiring__modal">
+                    <div>
+                      <InputLabel for="file">Image</InputLabel>
+                      <div className="hiring__admin">
+                        <Input type="file" name="file" onChange={handleImage} />
+                      </div>
+                      <InputLabel for="file">Blurb</InputLabel>
+                      <div className="hiring__admin">
+                        <TextareaAutosize
+                          type="text"
+                          name="blurb"
+                          onChange={(e) => handleText(e, "blurb")}
+                        />
+                      </div>
+                      <InputLabel for="file">Name</InputLabel>
+                      <div className="hiring__admin">
+                        <TextareaAutosize
+                          type="text"
+                          name="name"
+                          onChange={(e) => handleText(e, "name")}
+                        />
+                      </div>
+                      <InputLabel for="file">Role</InputLabel>
+                      <div className="hiring__admin">
+                        <TextareaAutosize
+                          type="text"
+                          name="role"
+                          onChange={(e) => handleText(e, "role")}
+                        />
+                      </div>
+                    </div>
+                    <div>
+                      <Button variant="contained" color="primary" type="submit" disabled={loading}>
+                        Submit
+                      </Button>
+                    </div>
+                  </form>
+                }
+              </Modal>
+            </React.Fragment>
+          ))}
+        {props.carousel.loaded || !props.carousel.loading ? (
+          <HiringSlide />
+        ) : (
+          <div className="hiring__loadingContainer">
+            <StyledCircularProgress size="10rem" />
           </div>
-          <div>
-            <Button variant="contained" color="primary" type="submit">
-              Submit
-            </Button>
-          </div>
-        </form>
-        { props.carousel.slide.map((slide) => {
-          return (<img src={slide.image} />)
-        })
-        }
+        )}
       </Container>
     </div>
   );
