@@ -2,7 +2,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 const express = require('express');
 const https = require('https');
-const port = 3001;
+const port = 3001 || process.env.PORT;
 const directoryToServe = 'client';
 const fs = require('fs');
 const path = require('path');
