@@ -75,7 +75,7 @@ class App extends React.Component {
               <Login />
             </Route>
             <Route path="/">
-              <Hiring />
+              <Home />
             </Route>
           </Switch>
           <Social />

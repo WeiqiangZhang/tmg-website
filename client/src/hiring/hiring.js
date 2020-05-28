@@ -153,7 +153,7 @@ function Hiring(props) {
             </div>
             <div className="hiring__deadline">
               <StyledFont variant="subtitle1" color="primary">
-                Due April 3rd, 11:59 pm
+                All Positions Filled
               </StyledFont>
             </div>
             <Grid item xs={12}>
