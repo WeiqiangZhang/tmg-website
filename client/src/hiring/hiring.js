@@ -294,7 +294,10 @@ function Hiring(props) {
               aria-labelledby="new-slide-modal"
               aria-describedby="new-slide-modal"
             >
-              <EditSlide slides={props.carousel}/>
+              <EditSlide 
+              slides={props.carousel}
+                            editCarousel={props.editCarousel}
+                            />
             </Modal>
           </React.Fragment>
         )}

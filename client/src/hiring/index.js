@@ -6,6 +6,7 @@ const mapDispatchToProps = dispatch => {
   return {
     get: () => dispatch(carouselActions.getCarousel()),
     upload: (image, blurb, name, role) => dispatch(carouselActions.uploadCarousel(image, blurb, name, role)),
+    editCarousel: (_id, image, blurb, name, role) => dispatch(carouselActions.editCarousel(_id, image, blurb, name, role)),
   }
 }
 

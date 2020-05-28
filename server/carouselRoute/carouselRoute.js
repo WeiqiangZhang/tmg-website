@@ -14,6 +14,18 @@ router.post('/new', passport.authenticate('jwt', { session : false }), async (re
   }
 });
 
+router.post('/update', passport.authenticate('jwt', { session : false }), async (req, res, next) => {
+  try {
+    const buffer = Buffer.from(req.body.image.split(",")[1], "base64");
+    const updatedEntry = await CarouselModel.findOneAndUpdate({_id: req.body._id}, 
+      {$set:{image: buffer, blurb: req.body.blurb, name: req.body.name, role: req.body.role}}, {new: true});
+    return res.json(updatedEntry);
+  } catch (error) {
+    console.log(error);
+    res.json(error);
+  }
+});
+
 router.get('/', async (req, res, next) => {
   try {
     const allSlides = await CarouselModel.find({});
