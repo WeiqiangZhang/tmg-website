@@ -17,18 +17,17 @@ export const getCarousel = () => {
     axios({
       method: "GET",
       url: "https://localhost:3001/carousel",
-      headers: {
-        Authorization: `Bearer ${localStorage.getItem("jwt")}`,
-      }
     })
       .then((res) => {
-        console.log(res.data)
         let slides = [];
         res.data.forEach(slide => slides.push(bufferToBase64(slide)));
         dispatch({type: actionTypes.SET_CAROUSEL, slides: slides});
       })
       .catch((err) => {
-        console.log(err);
+        if (err.response.status === 401) {
+          localStorage.removeItem('jwt');
+          dispatch({type: actionTypes.API_UNAUTHORIZED});
+        }
       });
   };
 };

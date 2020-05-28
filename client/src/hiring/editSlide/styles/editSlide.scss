@@ -1,0 +1,15 @@
+
+@import 'styles/palette.scss';
+
+.editSlide {
+  &__modal {
+    background-color: $white;
+    position: absolute;
+    left: 35%;
+    top: 35%;
+    padding: 2rem;
+  }
+  &__admin {
+    margin-bottom: 0.5rem;
+  }
+}

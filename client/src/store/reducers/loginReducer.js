@@ -22,6 +22,11 @@ const reducer = (state = initialState, action) => {
         ...state,
         authenticated: true,
       };
+    case actionTypes.API_UNAUTHORIZED:
+      return {
+        ...state,
+        authenticated: null,
+      };
     default:
       return state;
   }

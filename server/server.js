@@ -32,13 +32,13 @@ passport.use(strategy);
 app.use(express.urlencoded({ extended: true }));
 require('./auth/auth');
 const route = require('./route/route');
-const authRoute = require('./authRoute/authRoute');
+const carouselRoute = require('./carouselRoute/carouselRoute');
 
 app.use(cors());
 app.use(bodyParser.json({limit: '10mb', extended: true}));
 app.use(bodyParser.urlencoded({limit: '10mb', extended: true}));
 app.use('/', route);
-app.use('/carousel', authRoute);
+app.use('/carousel', carouselRoute);
 
 const httpsOptions = {
   cert: fs.readFileSync(path.join(__dirname, 'ca.crt')),
