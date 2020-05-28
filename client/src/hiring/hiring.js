@@ -280,27 +280,31 @@ function Hiring(props) {
                 </form>
               }
             </Modal>
-            <Button
-              variant="contained"
-              color="primary"
-              onClick={() => setEditModalOpen(true)}
-              endIcon={<AddCircle />}
-            >
-              <Typography variant="body1">Edit Slides</Typography>
-            </Button>
-            <Modal
-              open={editModalOpen && props.carousel.slide.length > 0}
-              onClose={() => setEditModalOpen(false)}
-              aria-labelledby="new-slide-modal"
-              aria-describedby="new-slide-modal"
-            >
-              <EditSlide
-                slides={props.carousel}
-                editCarousel={props.editCarousel}
-                onClose={() => setEditModalOpen(false)}
-                deleteCarousel={props.deleteCarousel}
-              />
-            </Modal>
+            {props.carousel.slide.length > 0 && (
+              <React.Fragment>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  onClick={() => setEditModalOpen(true)}
+                  endIcon={<AddCircle />}
+                >
+                  <Typography variant="body1">Edit Slides</Typography>
+                </Button>
+                <Modal
+                  open={editModalOpen}
+                  onClose={() => setEditModalOpen(false)}
+                  aria-labelledby="new-slide-modal"
+                  aria-describedby="new-slide-modal"
+                >
+                  <EditSlide
+                    slides={props.carousel}
+                    editCarousel={props.editCarousel}
+                    onClose={() => setEditModalOpen(false)}
+                    deleteCarousel={props.deleteCarousel}
+                  />
+                </Modal>
+              </React.Fragment>
+            )}
           </React.Fragment>
         )}
         {props.carousel.loaded || !props.carousel.loading ? (
