@@ -1,4 +1,5 @@
 import actionTypes from "../actionTypes";
+import update from 'immutability-helper';
 
 const initialState = {
   slide: [],
@@ -19,6 +20,13 @@ const reducer = (state = initialState, action) => {
         slide: [...state.slide, action.newSlide],
         loading: false,
       };
+    case actionTypes.UPDATE_SLIDE:
+      let index = state.slide.findIndex(x => x._id === action.newSlide._id);
+      return update(state, { 
+        slide: { 
+          [index]: {$merge: action.newSlide}
+        }
+      });
     case actionTypes.SET_CAROUSEL:
       return {
         ...state,

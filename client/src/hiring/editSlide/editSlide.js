@@ -41,6 +41,7 @@ function EditSlide(props) {
     setLoading(true);
     const updateImage = newImage === "" ? image : newImage.image;
     props.editCarousel(props.slides.slide[tab]._id, updateImage, blurb, name, role);
+    props.onClose();
     setLoading(false);
   }, [image, newImage, blurb, name, role]);
 

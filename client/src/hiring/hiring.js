@@ -294,10 +294,11 @@ function Hiring(props) {
               aria-labelledby="new-slide-modal"
               aria-describedby="new-slide-modal"
             >
-              <EditSlide 
-              slides={props.carousel}
-                            editCarousel={props.editCarousel}
-                            />
+              <EditSlide
+                slides={props.carousel}
+                editCarousel={props.editCarousel}
+                onClose={() => setEditModalOpen(false)}
+              />
             </Modal>
           </React.Fragment>
         )}

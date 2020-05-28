@@ -62,7 +62,6 @@ export const uploadCarousel = (image, blurb, name, role) => {
 
 export const editCarousel = (_id, image, blurb, name, role) => {
   return (dispatch) => {
-    console.log(image)
     dispatch({ type: actionTypes.SET_CAROUSEL_LOADING });
     axios({
       method: "POST",
@@ -79,7 +78,10 @@ export const editCarousel = (_id, image, blurb, name, role) => {
       },
     })
       .then((res) => {
-        console.log(res.data);
+        dispatch({
+          type: actionTypes.UPDATE_SLIDE,
+          newSlide: bufferToBase64(res.data),
+        });
       })
       .catch((err) => {
         if (err.response.status === 401) {

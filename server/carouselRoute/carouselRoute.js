@@ -18,7 +18,7 @@ router.post('/update', passport.authenticate('jwt', { session : false }), async 
   try {
     const buffer = Buffer.from(req.body.image.split(",")[1], "base64");
     const updatedEntry = await CarouselModel.findOneAndUpdate({_id: req.body._id}, 
-      {$set:{image: buffer, blurb: req.body.blurb, name: req.body.name, role: req.body.role}}, {new: true});
+      {$set:{image: buffer, blurb: req.body.blurb, name: req.body.name, role: req.body.role}}, {new: true, useFindAndModify: false});
     return res.json(updatedEntry);
   } catch (error) {
     console.log(error);
