@@ -16,4 +16,10 @@
   &__image {
     width: 16rem;
   }
+  &__dialog {
+    padding: 3rem;
+    &__text {
+      margin-bottom: 1rem;
+    }
+  }
 }

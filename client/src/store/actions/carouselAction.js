@@ -91,3 +91,31 @@ export const editCarousel = (_id, image, blurb, name, role) => {
       });
   };
 };
+
+export const deleteCarousel = (_id) => {
+  return (dispatch) => {
+    dispatch({ type: actionTypes.SET_CAROUSEL_LOADING });
+    axios({
+      method: "DELETE",
+      url: "https://localhost:3001/carousel/delete",
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("jwt")}`,
+      },
+      data: {
+        _id: _id
+      },
+    })
+      .then((res) => {
+        dispatch({
+          type: actionTypes.DELETE_SLIDE,
+          deletedSlide: bufferToBase64(res.data),
+        });    
+      })
+      .catch((err) => {
+        if (err.response.status === 401) {
+          localStorage.removeItem("jwt");
+          dispatch({ type: actionTypes.API_UNAUTHORIZED });
+        }
+      });
+  };
+};

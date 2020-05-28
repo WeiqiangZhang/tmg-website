@@ -289,7 +289,7 @@ function Hiring(props) {
               <Typography variant="body1">Edit Slides</Typography>
             </Button>
             <Modal
-              open={editModalOpen}
+              open={editModalOpen && props.carousel.slide.length > 0}
               onClose={() => setEditModalOpen(false)}
               aria-labelledby="new-slide-modal"
               aria-describedby="new-slide-modal"
@@ -298,6 +298,7 @@ function Hiring(props) {
                 slides={props.carousel}
                 editCarousel={props.editCarousel}
                 onClose={() => setEditModalOpen(false)}
+                deleteCarousel={props.deleteCarousel}
               />
             </Modal>
           </React.Fragment>

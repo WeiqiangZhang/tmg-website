@@ -34,6 +34,11 @@ const reducer = (state = initialState, action) => {
         loaded: true,
         loading: false,
       };
+    case actionTypes.DELETE_SLIDE:
+      let deletedIndex = state.slide.findIndex(x => x._id === action.deletedSlide._id);
+      return update(state, { 
+        slide: {$splice: [[deletedIndex, 1]]}
+      });
     default:
       return state;
   }

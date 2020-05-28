@@ -26,6 +26,16 @@ router.post('/update', passport.authenticate('jwt', { session : false }), async 
   }
 });
 
+router.delete('/delete', passport.authenticate('jwt', { session : false }), async (req, res, next) => {
+  try {
+    const deletedEntry = await CarouselModel.findOneAndDelete({_id: req.body._id}, {useFindAndModify: false});
+    return res.json(deletedEntry);
+  } catch (error) {
+    console.log(error);
+    res.json(error);
+  }
+});
+
 router.get('/', async (req, res, next) => {
   try {
     const allSlides = await CarouselModel.find({});
