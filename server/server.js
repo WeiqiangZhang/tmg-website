@@ -39,7 +39,7 @@ app.use(bodyParser.urlencoded({limit: '10mb', extended: true}));
 app.use('/', route);
 app.use('/carousel', carouselRoute);
 
-if (process.env.NODE_ENV !== 'production') {
+if (process.env.NODE_ENV === 'production') {
   app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
   });
