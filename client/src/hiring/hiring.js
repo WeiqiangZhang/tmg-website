@@ -32,7 +32,7 @@ function Hiring(props) {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    if (!props.carousel.loaded) {
+    if (!props.carousel.loaded && !props.carousel.loading) {
       props.get();
     }
   }, [props]);
