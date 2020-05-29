@@ -19,4 +19,23 @@
     &__link {
         color: $blue;
     }
+    &__addButton {
+        margin-right: 0.5rem;
+    }
+    &__admin {
+        margin-bottom: 0.5rem;
+    }
+    &__loadingContainer {
+        border: 0.125rem solid $grey3;
+        padding: 1.5rem;
+        margin-top: 2.5rem;
+        margin: 0 auto;
+    }
+    &__modal {
+      background-color: $white;
+      position: absolute;
+      left: 35%;
+      top: 35%;
+      padding: 2rem;
+    }
 }

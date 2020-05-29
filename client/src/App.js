@@ -1,5 +1,6 @@
 import React from 'react';
 import { ThemeProvider } from '@material-ui/core/styles';
+import PrivateRoute from './PrivateRoute';
 import Navigation from './container/navigation';
 import Home from './home';
 import Hiring from './hiring';
@@ -9,12 +10,13 @@ import Senior from './hiring/senior';
 import About from './about';
 import Team from './team';
 import Social from './container/social';
+import Login from './login';
 import Admin from './admin';
 import theme from './styles/theme';
 import {
   Switch,
   Route,
-  withRouter
+  withRouter,
 } from "react-router-dom";
 
 import './styles/App.scss';
@@ -66,8 +68,11 @@ class App extends React.Component {
             <Route path="/team" exact>
               <Team />
             </Route>
-            <Route path="/admin" exact>
+            <PrivateRoute path="/admin">
               <Admin />
+            </PrivateRoute>
+            <Route path="/login">
+              <Login />
             </Route>
             <Route path="/">
               <Home />

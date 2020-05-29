@@ -7,7 +7,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './styles/hiringslide.scss';
 
-function HiringSlide() {
+function HiringSlide(props) {
     const settings = {
       arrows: false,
       autoplay: true,
@@ -15,7 +15,7 @@ function HiringSlide() {
       dots: true,
       customPaging: i => (
         <div className="slider">
-          <img className="slider__dot" src={`/assets/slide${i}_icon.png`} alt={`slide ${i}`} />
+          <img className="slider__dot" src={props.carousel.slide[i].image} alt={`slide ${i}`} />
         </div>),
       appendDots: dots => <ul>{dots}</ul>,
       responsive: [
@@ -42,50 +42,32 @@ function HiringSlide() {
         lineHeight: 1,
       }
     })(Typography);
+
     return (
       <div className="hiringSlide">
         <Slider {...settings}>
-          <div>
+          { props.carousel.slide.map((slide, i) => {
+          return (<div key={`${slide.name}_${i}`}>
             <Grid container spacing={4}>
               <Grid item md={6} xs={12}>
-                <img className="hiringSlide__image" src={`/assets/slide0.png`} alt="Angela" />
+                <img className="hiringSlide__image" src={slide.image} alt={slide.name} />
               </Grid>
               <Grid item md={6} xs={12}>
                 <div className="hiringSlide__quote">
-                  <StyledSubtitle variant="body1">"The Marketing Group is back and better than ever! 
-                  Help us foster an inclusive marketing community at UTSC and join the herd."
+                  <StyledSubtitle variant="body1">{`"${slide.blurb}"`}
                   </StyledSubtitle>
                   <div className="hiringSlide__role">
-                    <StyledSubtitle variant="subtitle1">-Angela Yang,
+                    <StyledSubtitle variant="subtitle1">{`-${slide.name},`}
                     </StyledSubtitle>
-                    <StyledSubtitle variant="subtitle2"> 2020-21 Co-President
-                    </StyledSubtitle>
-                  </div>
-                </div>
-              </Grid>
-            </Grid>
-          </div>
-          <div>
-            <Grid container spacing={4}>
-              <Grid item md={6} xs={12}>
-                <img className="hiringSlide__image" src={`/assets/slide1.png`} alt="Arman" />
-              </Grid>
-              <Grid item md={6} xs={12}>
-                <div className="hiringSlide__quote">
-                  <StyledSubtitle variant="body1">"The Marketing Group is a student organization that's one cut above
-                  the rest. We're looking for talented and passionate individuals to help us continue to stand
-                  out among the herd."
-          </StyledSubtitle>
-                  <div className="hiringSlide__role">
-                    <StyledSubtitle variant="subtitle1">-Arman Nagra,
-                    </StyledSubtitle>
-                    <StyledSubtitle variant="subtitle2"> 2020-21 Co-President
+                    <StyledSubtitle variant="subtitle2">{` ${slide.role}`}
                     </StyledSubtitle>
                   </div>
                 </div>
               </Grid>
             </Grid>
-          </div>
+          </div>)
+        })
+        }
         </Slider>
       </div>
     );

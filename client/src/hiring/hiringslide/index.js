@@ -1,3 +1,10 @@
 import HiringSlide from './hiringslide';
+import { connect } from 'react-redux';
 
-export default HiringSlide;
+const mapStateToProps = state => {
+  return {
+    carousel: state.carouselReducer
+  };
+};
+
+export default connect(mapStateToProps, null)(HiringSlide);

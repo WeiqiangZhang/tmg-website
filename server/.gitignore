@@ -1,0 +1,10 @@
+.env
+node_modules
+ca.crt
+ca.key
+ia.crt
+ia.csr
+ia.key
+ca_bundle.crt
+certificate.crt
+private.key
