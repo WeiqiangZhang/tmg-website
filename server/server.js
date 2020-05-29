@@ -39,11 +39,17 @@ app.use(bodyParser.urlencoded({limit: '10mb', extended: true}));
 app.use('/', route);
 app.use('/carousel', carouselRoute);
 
-const httpsOptions = {
-  cert: fs.readFileSync(path.join(__dirname, 'ca.crt')),
-  key: fs.readFileSync(path.join(__dirname, 'ca.key'))
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
+  });
+} else {
+  const httpsOptions = {
+    cert: fs.readFileSync(path.join(__dirname, 'ca.crt')),
+    key: fs.readFileSync(path.join(__dirname, 'ca.key'))
+  }
+  
+  https.createServer(httpsOptions, app).listen(port, function() {
+    console.log(`Serving the ${directoryToServe}/ directory at https://localhost:${port}`);
+  });
 }
-
-https.createServer(httpsOptions, app).listen(port, function() {
-  console.log(`Serving the ${directoryToServe}/ directory at https://localhost:${port}`);
-});
