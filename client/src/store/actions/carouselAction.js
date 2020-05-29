@@ -18,7 +18,7 @@ export const getCarousel = () => {
     dispatch({ type: actionTypes.SET_CAROUSEL_LOADING });
     axios({
       method: "GET",
-      url: "https://localhost:3001/carousel",
+      url: "https://tmg-website-utsc.herokuapp.com/carousel",
     })
       .then((res) => {
         let slides = [];
@@ -39,7 +39,7 @@ export const uploadCarousel = (image, blurb, name, role) => {
     dispatch({ type: actionTypes.SET_CAROUSEL_LOADING });
     axios({
       method: "POST",
-      url: "https://localhost:3001/carousel/new",
+      url: "https://tmg-website-utsc.herokuapp.com/carousel/new",
       headers: {
         Authorization: `Bearer ${localStorage.getItem("jwt")}`,
       },
@@ -65,7 +65,7 @@ export const editCarousel = (_id, image, blurb, name, role) => {
     dispatch({ type: actionTypes.SET_CAROUSEL_LOADING });
     axios({
       method: "POST",
-      url: "https://localhost:3001/carousel/update",
+      url: "https://tmg-website-utsc.herokuapp.com/carousel/update",
       headers: {
         Authorization: `Bearer ${localStorage.getItem("jwt")}`,
       },
@@ -97,7 +97,7 @@ export const deleteCarousel = (_id) => {
     dispatch({ type: actionTypes.SET_CAROUSEL_LOADING });
     axios({
       method: "DELETE",
-      url: "https://localhost:3001/carousel/delete",
+      url: "https://tmg-website-utsc.herokuapp.com/carousel/delete",
       headers: {
         Authorization: `Bearer ${localStorage.getItem("jwt")}`,
       },

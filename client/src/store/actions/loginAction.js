@@ -6,7 +6,7 @@ export const login = (username, password, history) => {
     dispatch({type: actionTypes.SET_LOGIN_LOADING,});
     axios({
       method: "POST",
-      url: "https://localhost:3001/login",
+      url: "https://tmg-website-utsc.herokuapp.com/login",
       data: { username: username, password: password },
     })
       .then((res) => {

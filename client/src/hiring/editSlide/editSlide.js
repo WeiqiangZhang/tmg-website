@@ -36,7 +36,7 @@ function EditSlide(props) {
     setName(props.slides.slide[tab].name);
     setRole(props.slides.slide[tab].role);
     setDeleteClicked(false);
-  }, []);
+  }, [props.slides.slide, tab]);
 
   const handleValidation = useCallback(() => {
     let valid = true;
@@ -71,7 +71,7 @@ function EditSlide(props) {
       props.onClose();
       setLoading(false);
     },
-    [slides, image, newImage, blurb, name, role]
+    [handleValidation, props, tab, image, newImage, blurb, name, role]
   );
 
   const handleDelete = useCallback(() => {
@@ -84,7 +84,7 @@ function EditSlide(props) {
     props.deleteCarousel(props.slides.slide[tab]._id);
     props.onClose();
     setLoading(false);
-  }, [slides, tab, deleteClicked, openDialog]);
+  }, [props, tab, deleteClicked]);
 
   const handleImage = useCallback(
     (e) => {
@@ -102,7 +102,7 @@ function EditSlide(props) {
         });
       };
     },
-    [newImage]
+    []
   );
 
   const handleText = useCallback(
@@ -113,7 +113,7 @@ function EditSlide(props) {
       else if (field === "name") setName(value);
       else if (field === "role") setRole(value);
     },
-    [blurb, name, role]
+    []
   );
 
   const handleBlur = useCallback(
@@ -123,7 +123,7 @@ function EditSlide(props) {
       else if (field === "name" && name !== "") setNameError(false);
       else if (field === "role" && role !== "") setRoleError(false);
     },
-    [image, blurb, name, role]
+    [blurb, name, role]
   );
 
   const handleTabChange = useCallback(
@@ -134,13 +134,13 @@ function EditSlide(props) {
       setRole(props.slides.slide[newTab].role);
       setTab(newTab);
     },
-    [tab]
+    [props.slides.slide]
   );
 
   const handleRejectDelete = useCallback(() => {
     setDeleteClicked(false);
     setOpenDialog(false);
-  }, [deleteClicked, openDialog]);
+  }, []);
 
   const DeleteButton = withStyles((theme) => ({
     root: {
@@ -168,7 +168,7 @@ function EditSlide(props) {
           ))}
         </Tabs>
         <div>
-          <img className="editSlide__image" src={image} />
+          <img className="editSlide__image" src={image} alt={`tab_image_${tab}`} />
           <InputLabel for="file">New Image</InputLabel>
           <div className="editSlide__admin">
             <Input type="file" name="file" onChange={handleImage} />

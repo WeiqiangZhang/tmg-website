@@ -43,7 +43,6 @@ function HiringSlide(props) {
       }
     })(Typography);
 
-    const {slide} = props.carousel;
     return (
       <div className="hiringSlide">
         <Slider {...settings}>

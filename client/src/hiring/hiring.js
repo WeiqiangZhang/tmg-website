@@ -35,7 +35,7 @@ function Hiring(props) {
     if (!props.carousel.loaded) {
       props.get();
     }
-  }, []);
+  }, [props]);
   const StyledCircularProgress = withStyles({
     root: {
       margin: "auto",
@@ -95,7 +95,7 @@ function Hiring(props) {
       setModalOpen(false);
       setLoading(false);
     },
-    [image, blurb, name, role]
+    [props, handleValidation, image, blurb, name, role]
   );
 
   const handleImage = useCallback(
@@ -110,7 +110,7 @@ function Hiring(props) {
         });
       };
     },
-    [image]
+    []
   );
 
   const handleText = useCallback(
@@ -121,7 +121,7 @@ function Hiring(props) {
       else if (field === "name") setName(value);
       else if (field === "role") setRole(value);
     },
-    [blurb, name, role]
+    []
   );
 
   const handleBlur = useCallback(
