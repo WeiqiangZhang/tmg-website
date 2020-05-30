@@ -156,19 +156,6 @@ function Hiring(props) {
                 All Positions Filled
               </StyledFont>
             </div>
-            <Grid item xs={12}>
-              <div className="hiring__linkContainer">
-                <Link
-                  to={{
-                    pathname: `${history.location.pathname}director`,
-                  }}
-                >
-                  <Typography variant="subtitle1" className="hiring__link">
-                    Explore Director Positions
-                  </Typography>
-                </Link>
-              </div>
-            </Grid>
           </Grid>
           <Grid item md={6} xs={12}>
             <StyledFont variant="h2" className="hiring__header" color="primary">
