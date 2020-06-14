@@ -34,7 +34,7 @@ class Social extends React.Component {
               </a>
             </Grid>
             <Grid item>
-              <a href="linkedin.com/company/homeofthepinksheep" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.linkedin.com/company/homeofthepinksheep" target="_blank" rel="noopener noreferrer">
                 <img className="social__icon" src={linkedin} alt="linkedin" />
               </a>
             </Grid>
