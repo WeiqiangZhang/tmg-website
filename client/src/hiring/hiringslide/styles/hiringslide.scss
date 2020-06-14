@@ -19,15 +19,19 @@
 }
 
 .slick-dots li {
-    height: 4rem;
-    width: 4rem;
+    height: 1rem;
+    width: 1rem;
+    border-radius: 50%;
+    background-color: $grey3;
 }
 
 .slick-dots .slick-active {
-    height: 4rem;
-    width: 4rem;
+    height: 1rem;
+    width: 1rem;
     border-radius: 50%;
-    box-shadow: 0 0 1rem 0 $secondary;
+    box-shadow: 0 0 0.25rem 0 $secondary;
+    background-color: $primary;
+    opacity: 0.5;
     transition: box-shadow 0.25s ease-in;
 
 }
@@ -35,10 +39,4 @@
 .slider {
     height: 100%;
     width: 100%;
-    &__dot {
-        height: 100%;
-        width: 100%;
-        border-radius: 50%;
-        opacity: 0.5;
-    }
 }

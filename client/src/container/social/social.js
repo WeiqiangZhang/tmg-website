@@ -3,6 +3,7 @@ import facebook from './assets/facebook.png';
 import instagram from './assets/instagram.png';
 import tiktok from './assets/tiktok.png';
 import gmail from './assets/gmail.png';
+import linkedin from './assets/linkedin.png';
 import { Container, Grid } from '@material-ui/core';
 
 import './styles/social.scss';
@@ -30,6 +31,11 @@ class Social extends React.Component {
             <Grid item>
               <a href="mailto:themarketinggrouputsc@outlook.com">
                 <img className="social__icon" src={gmail} alt="gmail" />
+              </a>
+            </Grid>
+            <Grid item>
+              <a href="linkedin.com/company/homeofthepinksheep" target="_blank" rel="noopener noreferrer">
+                <img className="social__icon" src={linkedin} alt="linkedin" />
               </a>
             </Grid>
           </Grid>

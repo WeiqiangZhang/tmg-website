@@ -3,7 +3,7 @@ import UniSansThin from 'fonts/uni-sans.thin-caps.otf';
 import UniSansItalic from 'fonts/uni-sans.heavy-italic-caps.otf';
 import UniSansItalicThin from 'fonts/uni-sans.thin-italic-caps.otf';
 import UniSans from 'fonts/uni-sans.heavy-caps.otf';
-import Helvetica from 'fonts/helvetica.ttf';
+import FuturaPTCondMedium from 'fonts/FuturaPTCondMedium.otf';
 import { constants } from './constants';
 
 const unisans = {
@@ -54,15 +54,15 @@ const unisanst = {
   `
 };
 
-const helvetica = {
-  fontFamily: 'Helvetica',
+const futuramedium = {
+  fontFamily: 'FuturaPTCondMedium',
   fontStyle: 'normal',
   fontDisplay: 'swap',
   fontWeight: 400,
   src: `
-    local('Helvetica'),
-    local('Helvetica-Regular'),
-    url(${Helvetica}) format('ttf')
+    local('FuturaPTCondMedium'),
+    local('FuturaPTCondMedium-Regular'),
+    url(${FuturaPTCondMedium}) format('ttf')
   `
 };
 
@@ -91,7 +91,7 @@ export default createMuiTheme({
     },
   },
   typography: {
-    fontFamily: 'UniSans, UniSansThin, UniSansItalic, UniSansItalicThin, Helvetica',
+    fontFamily: 'UniSans, UniSansThin, UniSansItalic, UniSansItalicThin, FuturaPTCondMedium',
     fontWeightLight: 300,
     fontWeightRegular: 500,
     fontWeightMedium: 700,
@@ -115,20 +115,20 @@ export default createMuiTheme({
       fontSize: '1.25rem',
     },
     body1: {
-      fontFamily: 'Helvetica',
-      fontSize: '1.5rem',
+      fontFamily: 'FuturaPTCondMedium',
+      fontSize: '2rem',
       fontWeight: 600
     },
     body2: {
-      fontFamily: 'Helvetica',
-      fontSize: '1.25rem',
+      fontFamily: 'FuturaPTCondMedium',
+      fontSize: '1.5rem',
       fontWeight: 400
     }
   },
   overrides: {
     MuiCssBaseline: {
       '@global': {
-        '@font-face': [unisans, unisanst, unisansi, helvetica, unisansit],
+        '@font-face': [unisans, unisanst, unisansi, futuramedium, unisansit],
         '@media (min-width:100rem)': {
           '.MuiContainer-maxWidthXl': {
             maxWidth: '100rem'

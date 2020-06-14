@@ -14,9 +14,7 @@ function HiringSlide(props) {
       autoplaySpeed: 10000,
       dots: true,
       customPaging: i => (
-        <div className="slider">
-          <img className="slider__dot" src={props.carousel.slide[i].image} alt={`slide ${i}`} />
-        </div>),
+        <div className="slider" />),
       appendDots: dots => <ul>{dots}</ul>,
       responsive: [
         {
@@ -39,7 +37,6 @@ function HiringSlide(props) {
       },
       body1: {
         fontSize: matches ? "2rem" : "3rem",
-        lineHeight: 1,
       }
     })(Typography);
 
