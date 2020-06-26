@@ -1,6 +1,7 @@
 import React from 'react';
 import { Typography } from '@material-ui/core';
-
+import { withStyles } from '@material-ui/core';
+import withMediaQuery from 'common/common.js';
 import './styles/banner.scss';
 
 class Banner extends React.Component {
@@ -21,7 +22,7 @@ class Banner extends React.Component {
   }
 
   typeWriter() {
-    const texts = ["the herd", "the home of marketing", "TMG", "innovation", "the G.O.A.T"]
+    const texts = ["OUR HERD, FELLOW PINK SHEEP", "THE HOME OF MARKETING", "THE MARKETING GROUP"]
     this.intervalId1 = setInterval(() => {
       this.setState(prevState => ({
         count: (prevState.count === texts.length - 1 ? 0 : prevState.count + 1),
@@ -41,14 +42,19 @@ class Banner extends React.Component {
 
   render() {
     const { text } = this.state;
+    const StyledFont = withStyles({
+      h2: {
+        fontSize: this.props.mediaQuery ? "4rem" : "2.5rem",
+      }
+    })(Typography);
     return (
       <div className="banner">
         <span>
-          <Typography variant="h1" className="banner__text">{`We are ${text}_`}</Typography>
+          <StyledFont variant="h2" className="banner__text">{`Welcome to ${text}_`}</StyledFont>
         </span>
       </div>
     );
   }
 }
 
-export default Banner;
+export default (withMediaQuery('(min-width:75rem)')(Banner));

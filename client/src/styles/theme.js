@@ -117,7 +117,7 @@ export default createMuiTheme({
     body1: {
       fontFamily: 'FuturaPTCondMedium',
       fontSize: '2rem',
-      fontWeight: 600
+      fontWeight: 500
     },
     body2: {
       fontFamily: 'FuturaPTCondMedium',

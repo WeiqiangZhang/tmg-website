@@ -5,7 +5,8 @@ import './styles/members.scss';
 
 function Members(props) {
   const { tab } = props;
-  const memberNames = [["Angela", "Arman"], ["Amelia", "Isha", "Elya", "George"], ["Dewan"]]
+  const memberNames = [["Angela", "Arman"], ["Amelia", "Isha", "Elya", "George"], 
+  ["Jerry", "Kristen", "Agam", "Pinar", "Thomas", "Deborah", "Faran", "Nadia", "Neeraka", "Gloria"], ["Dewan"]];
   const memberObject = {
     0: {
       Angela: {
@@ -29,12 +30,39 @@ function Members(props) {
         name: "George Li"
       }
     },
-    // 2: {
-    //   Weiqiang: {
-    //     name: "Weiqiang Zhang"
-    //   }
-    // },
     2: {
+      Jerry: {
+        name: "Jerry Hung"
+      },
+      Kristen: {
+        name: "Kristen Koo"
+      },
+      Agam: {
+        name: "Agam Gujral"
+      },
+      Pinar: {
+        name: "Pinar Nacakli"
+      },
+      Thomas: {
+        name: "Thomas Code"
+      },
+      Deborah: {
+        name: "Deborah Krishanthan"
+      },
+      Faran: {
+        name: "Faran Ali"
+      },
+      Nadia: {
+        name: "Nadia Ardekani"
+      },
+      Neeraka: {
+        name: "Neeraka Balamurali"
+      },
+      Gloria: {
+        name: "Gloria Liu"
+      },
+    },
+    3: {
       Dewan: {
         name: "Dewan"
       }
@@ -48,7 +76,7 @@ function Members(props) {
             const image = process.env.PUBLIC_URL + `/assets/${value}_${index}_${tab}.png`;
             const memberObj = memberObject[tab][value];
             return (
-              <Grid item md={6} xs={12} key={index}>
+              <Grid item md={tab === 2 ? 4 : 6} xs={12} key={index}>
                 <Member image={image} name={memberObj.name} />
               </Grid>
             )

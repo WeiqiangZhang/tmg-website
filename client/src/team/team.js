@@ -7,7 +7,7 @@ import './styles/team.scss';
 
 const StyledTab = withStyles(theme => ({
   root: {
-    fontFamily: 'UniSansThin',
+    fontFamily: 'UniSans',
     fontWeight: theme.typography.fontWeightRegular,
     fontSize: "1.5rem",
   },
@@ -30,7 +30,7 @@ function Team(props) {
           >
             <StyledTab label="President" />
             <StyledTab label="Vice President" />
-            {/* <StyledTab label="Director" /> */}
+            <StyledTab label="Director" />
             <StyledTab label="Board of Directors" />
           </Tabs>
         </div>
