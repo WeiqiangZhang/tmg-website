@@ -141,7 +141,7 @@ function Hiring(props) {
     <div className="hiring">
       <Container maxWidth="xl">
         <Grid container spacing={4}>
-          <Grid item md={12} xs={12}>
+          {/* <Grid item md={12} xs={12}>
             <StyledFont variant="h2" className="hiring__header" color="primary">
               CAMPUS BRAND INFLUENCERS
             </StyledFont>
@@ -158,7 +158,7 @@ function Hiring(props) {
                 <Button variant="contained" color="primary" onClick={() => history.push(`/cbi`)}>Apply Now</Button>
               </StyledFont>
             </div>
-          </Grid>
+          </Grid> */}
           <Grid item md={6} xs={12}>
             <StyledFont variant="h2" className="hiring__header" color="primary">
               Become a Director
