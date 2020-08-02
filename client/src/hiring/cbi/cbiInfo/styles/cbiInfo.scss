@@ -1,0 +1,27 @@
+@import 'styles/palette.scss';
+
+.info {
+    margin: 4rem 0;
+    &__apply {
+        margin-bottom: 2rem;
+        &__header {
+            margin: 1rem 0;
+        }
+    }
+    
+    &__description {
+        margin-bottom: 2.5rem;
+    }
+
+    &__qualification {
+        margin-bottom: 2.5rem;
+    }
+    
+    &__skill {
+        margin-bottom: 2.5rem;
+    }
+
+    &__link {
+        color: $blue;
+    }
+}

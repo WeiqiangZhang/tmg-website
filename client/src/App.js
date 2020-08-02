@@ -7,6 +7,8 @@ import Hiring from './hiring';
 import Info from './hiring/info';
 import Director from './hiring/director';
 import Senior from './hiring/senior';
+import Cbi from './hiring/cbi';
+import CbiInfo from './hiring/cbi/cbiInfo';
 import About from './about';
 import Team from './team';
 import Social from './container/social';
@@ -56,14 +58,11 @@ class App extends React.Component {
             <Route path="/hiring" exact>
               <Hiring />
             </Route>
-            <Route path="/director" exact>
-              <Director />
+            <Route path="/cbi" exact>
+              <Cbi />
             </Route>
-            <Route path="/hiring/senior" exact>
-              <Senior />
-            </Route>
-            <Route path="/director/info" exact >
-              <Info />
+            <Route path="/cbi/info" exact>
+              <CbiInfo />
             </Route>
             <Route path="/team" exact>
               <Team />

@@ -1,9 +1,9 @@
 import React from 'react';
-import facebook from './assets/facebook.png';
-import instagram from './assets/instagram.png';
-import tiktok from './assets/tiktok.png';
-import gmail from './assets/gmail.png';
-import linkedin from './assets/linkedin.png';
+import facebook from './assets/facebook-white.png';
+import instagram from './assets/instagram-white.png';
+import tiktok from './assets/tiktok-white.png';
+import gmail from './assets/gmail-white.png';
+import linkedin from './assets/linkedin-white.png';
 import { Container, Grid } from '@material-ui/core';
 
 import './styles/social.scss';

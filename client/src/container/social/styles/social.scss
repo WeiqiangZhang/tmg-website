@@ -5,7 +5,11 @@
     background-color: $maroon;
     margin-top: auto;
     &__icon {
-        width: 1.5rem;
-        height: 1.5rem;
+        width: 2.5rem;
+        height: 2.5rem;
+        &:hover {
+            opacity: 0.8;
+            transition: opacity 0.5s;
+        }
     }
 }
