@@ -1,27 +1,47 @@
 @import 'styles/palette.scss';
 
 .info {
-    margin: 4rem 0;
-    &__apply {
-        margin-bottom: 2rem;
-        &__header {
-            margin: 1rem 0;
-        }
+  margin: 4rem 0;
+  &__header {
+    margin-bottom: 1rem;
+  }
+  &__apply {
+    margin-bottom: 2rem;
+    &__header {
+      margin: 1rem 0;
     }
-    
-    &__description {
-        margin-bottom: 2.5rem;
-    }
+  }
+  
+  &__description {
+    margin-bottom: 2.5rem;
+  }
 
-    &__qualification {
-        margin-bottom: 2.5rem;
-    }
-    
-    &__skill {
-        margin-bottom: 2.5rem;
-    }
+  &__qualification {
+    margin-bottom: 2.5rem;
+  }
+  
+  &__skill {
+    margin-bottom: 2.5rem;
+  }
 
-    &__link {
-        color: $blue;
+  &__link {
+    color: $blue;
+  }
+
+  &__icon {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    margin: 0 auto 0.5rem;
+    display: block;
+    &-enter {
+      opacity: 0;
+      transform: translateY(-25px);
+      &-done {
+        opacity: 1;
+        transform: translateY(0);
+        transition: opacity 500ms ease-in, transform 500ms ease-in;
+      }
     }
+  }
 }

@@ -141,7 +141,7 @@ function Hiring(props) {
     <div className="hiring">
       <Container maxWidth="xl">
         <Grid container spacing={4}>
-          {/* <Grid item md={12} xs={12}>
+          <Grid item md={12} xs={12}>
             <StyledFont variant="h2" className="hiring__header" color="primary">
               CAMPUS BRAND INFLUENCERS
             </StyledFont>
@@ -153,12 +153,15 @@ function Hiring(props) {
                 Check out how you can get involved and become a Campus Brand Influencer at your university. We can't wait to have you join our herd! 
               </Typography>
             </div>
+            <StyledFont variant="subtitle1" color="primary">
+              <Button variant="contained" color="primary" onClick={() => history.push(`/cbi`)}>Apply Now</Button>
+            </StyledFont>
             <div className="hiring__deadline">
               <StyledFont variant="subtitle1" color="primary">
-                <Button variant="contained" color="primary" onClick={() => history.push(`/cbi`)}>Apply Now</Button>
+                Deadline: September 1st, 2020
               </StyledFont>
             </div>
-          </Grid> */}
+          </Grid>
           <Grid item md={6} xs={12}>
             <StyledFont variant="h2" className="hiring__header" color="primary">
               Become a Director
