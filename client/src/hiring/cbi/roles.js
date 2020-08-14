@@ -1,7 +1,7 @@
 export default {
   cbi: {
     name: "CAMPUS BRAND INFLUENCERS",
-    description: "Campus Brand Influencers are passionate, creative and diligent individuals who will represent The Marketing Group at their respective university. You will be working with like-minded CBIs within our team to promote the Lumen 2020 Marketing Case Competition.",
+    description: "Campus Brand Influencers are passionate, creative and diligent individuals who will represent The Marketing Group at their respective university. You will be working with like-minded CBIs within our team to promote the Revive 2020 Marketing Case Competition.",
     qualification: ["You will work as a liaison between TMG executives and your campus to globally expand our Case Competition",
     "Generate brand awareness through partaking in event marketing",
     "Create digital marketing material and develop promotional strategy",
