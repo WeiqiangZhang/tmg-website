@@ -153,12 +153,12 @@ function Hiring(props) {
                 Check out how you can get involved and become a Campus Brand Influencer at your university. We can't wait to have you join our herd! 
               </Typography>
             </div>
-            <StyledFont variant="subtitle1" color="primary">
+            {/* <StyledFont variant="subtitle1" color="primary">
               <Button variant="contained" color="primary" onClick={() => history.push(`/cbi`)}>Apply Now</Button>
-            </StyledFont>
+            </StyledFont> */}
             <div className="hiring__deadline">
               <StyledFont variant="subtitle1" color="primary">
-                Deadline: September 1st, 2020
+                Coming soon!
               </StyledFont>
             </div>
           </Grid>
