@@ -6,6 +6,7 @@ import { CSSTransition } from 'react-transition-group';
 import networking from './assets/networking.png';
 import development from './assets/development.png';
 import involvement from './assets/involvement.png';
+import cbi from '../roles';
 
 import './styles/cbiInfo.scss';
 
@@ -18,7 +19,7 @@ class CbiInfo extends React.Component {
     this.setState({ mounted: true });
   }
   render() {
-    const { name, description, qualification, benefit, skill } = this.props.info;
+    const { name, description, qualification, benefit, skill } = cbi;
     const { mounted } = this.state;
     const icons = [networking, development, involvement];
     const benefitKeys = benefit ? Object.keys(benefit) : null;

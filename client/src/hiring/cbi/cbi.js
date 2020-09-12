@@ -1,12 +1,12 @@
-import React from 'react';
-import { Container } from '@material-ui/core';
-import { Typography } from '@material-ui/core';
+import React from "react";
+import { Container } from "@material-ui/core";
+import { Typography } from "@material-ui/core";
 
-import posObj from './roles';
+import posObj from "./roles";
 
 import { Link, withRouter } from "react-router-dom";
 
-import './styles/cbi.scss';
+import "./styles/cbi.scss";
 
 class Cbi extends React.Component {
   render() {
@@ -15,22 +15,25 @@ class Cbi extends React.Component {
     return (
       <div className="cbi">
         <Container maxWidth="lg">
-          <Typography variant="h1" className="cbi__header" color="primary">2020-21 Positions</Typography>
-          {positions.map((value, index) => {
-            const memberObj = posObj[value];
-            return (
-              <div className="cbi__role" key={index}>
-                <Link className="cbi__underline" to={{
-                  pathname: `${history.location.pathname}/info`
-                }} onClick={() => onSetInfo(memberObj)}>
-                  <Typography variant="subtitle1" className="cbi__link">{memberObj.name}</Typography>
-                </Link>
-                <Typography variant="body2">{memberObj.description}</Typography>
-              </div>
-            )
-          })}
+          <Typography variant="h1" className="cbi__header" color="primary">
+            2020-21 Positions
+          </Typography>
+          <div className="cbi__role">
+            <Link
+              className="cbi__underline"
+              to={{
+                pathname: `${history.location.pathname}/info`,
+              }}
+              onClick={() => onSetInfo(posObj)}
+            >
+              <Typography variant="subtitle1" className="cbi__link">
+                {posObj.name}
+              </Typography>
+            </Link>
+            <Typography variant="body2">{posObj.description}</Typography>
+          </div>
         </Container>
-      </div >
+      </div>
     );
   }
 }
