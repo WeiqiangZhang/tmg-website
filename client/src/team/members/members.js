@@ -1,5 +1,6 @@
 import React from 'react';
 import Member from './member';
+import EditMembers from './editMembers';
 import { Grid } from '@material-ui/core';
 import './styles/members.scss';
 
@@ -68,6 +69,7 @@ function Members(props) {
   return (
     <div className="members">
       <div className="members__container">
+        <EditMembers members={{president: '', vicepresident: '', director: '', BOD: ''}} />
         <Grid container spacing={3}>
           {memberNames[tab].map((value, index) => {
             const image = process.env.PUBLIC_URL + `/assets/${value}_${index}_${tab}.png`;

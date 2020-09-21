@@ -32,12 +32,14 @@ app.use(express.urlencoded({ extended: true }));
 require('./auth/auth');
 const route = require('./route/route');
 const carouselRoute = require('./carouselRoute/carouselRoute');
+const teamRoute = require('./teamRoute/teamRoute');
 
 app.use(cors());
 app.use(bodyParser.json({limit: '10mb', extended: true}));
 app.use(bodyParser.urlencoded({limit: '10mb', extended: true}));
 app.use('/', route);
 app.use('/carousel', carouselRoute);
+app.use('/team', teamRoute);
 
 if (process.env.NODE_ENV === 'production') {
   app.listen(process.env.PORT || 5000, () => {

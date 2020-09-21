@@ -24,6 +24,11 @@ const CarouselSchema = new Schema({
   role: { type : String, required : true }
 });
 
+const TeamSchema = new Schema({
+  role: { type: Number, required : true },
+  members : [{ type: Buffer, contentType: String }],
+});
+
 // salt hash function for password (salt at 10), signup not used currently
 // UserSchema.pre('save', async function(next){
 //   const hash = await bcrypt.hash(this.password, 10);
@@ -38,5 +43,6 @@ UserSchema.methods.validPassword = async function(password){
 
 const UserModel = mongoose.model('admin', UserSchema);
 const CarouselModel = mongoose.model('carousel', CarouselSchema);
+const TeamModel = mongoose.model('team', TeamSchema);
 
-module.exports = {UserModel: UserModel, CarouselModel: CarouselModel};
+module.exports = {UserModel: UserModel, CarouselModel: CarouselModel, TeamModel: TeamModel};
