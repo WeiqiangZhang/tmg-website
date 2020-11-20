@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import {
-  Container, 
+  Container,
   Grid,
   withStyles,
   Typography,
@@ -100,31 +100,25 @@ function Hiring(props) {
     [props, handleValidation, image, blurb, name, role]
   );
 
-  const handleImage = useCallback(
-    (e) => {
-      e.preventDefault();
-      let file = e.target.files[0];
-      let reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onloadend = () => {
-        setImage({
-          image: reader.result,
-        });
-      };
-    },
-    []
-  );
+  const handleImage = useCallback((e) => {
+    e.preventDefault();
+    let file = e.target.files[0];
+    let reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onloadend = () => {
+      setImage({
+        image: reader.result,
+      });
+    };
+  }, []);
 
-  const handleText = useCallback(
-    (e, field) => {
-      const value = e.target.value;
-      // Switch statement was causing all fields to be updated at once (TODO: look into why)
-      if (field === "blurb") setBlurb(value);
-      else if (field === "name") setName(value);
-      else if (field === "role") setRole(value);
-    },
-    []
-  );
+  const handleText = useCallback((e, field) => {
+    const value = e.target.value;
+    // Switch statement was causing all fields to be updated at once (TODO: look into why)
+    if (field === "blurb") setBlurb(value);
+    else if (field === "name") setName(value);
+    else if (field === "role") setRole(value);
+  }, []);
 
   const handleBlur = useCallback(
     (e, field) => {
@@ -147,17 +141,31 @@ function Hiring(props) {
             </StyledFont>
             <div className="hiring__body">
               <Typography variant="body1">
-                The Marketing Group is back and better than ever! This time around we are looking for your help to get the ball rolling. 
-                In early 2021 we will be hosting a global marketing case competition full of challenges, speaker events, networking and more. 
-                Be a part of the team that makes this happen. Grow your network. Engage with your peers. Unleash your pink sheep! 
-                Check out how you can get involved and become a Campus Brand Influencer at your university. We can't wait to have you join our herd! 
+                The Marketing Group is back and better than ever! This time
+                around we are looking for your help to get the ball rolling. In
+                early 2021 we will be hosting a global marketing case
+                competition full of challenges, speaker events, networking and
+                more. Be a part of the team that makes this happen. Grow your
+                network. Engage with your peers. Unleash your pink sheep! Check
+                out how you can get involved and become a Campus Brand
+                Influencer at your university. We can't wait to have you join
+                our herd!
               </Typography>
             </div>
-            <div className="hiring__deadline">
+            <StyledFont variant="subtitle1" color="primary">
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={() => history.push(`/cbi`)}
+              >
+                Apply Now
+              </Button>
+            </StyledFont>
+            {/* <div className="hiring__deadline">
               <StyledFont variant="subtitle1" color="primary">
                 All Positions Filled
               </StyledFont>
-            </div>
+            </div> */}
           </Grid>
           <Grid item md={6} xs={12}>
             <StyledFont variant="h2" className="hiring__header" color="primary">
