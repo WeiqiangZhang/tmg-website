@@ -48,6 +48,7 @@ function CaseOne(props) {
   const [pageNumber, setPageNumber] = useState(1);
   const [numPages2, setNumPages2] = useState(null);
   const [pageNumber2, setPageNumber2] = useState(1);
+  const [excel, setExcel] = useState(null);
   const pdfRef = useRef(null);
   const pdf2Ref = useRef(null);
   const [pdfHovered, setPdfHovered] = useState(false);
@@ -94,7 +95,6 @@ function CaseOne(props) {
       document.removeEventListener("mouseover", handleHoverInside);
     };
   }, [pdf2Ref]);
-  console.log(pdfHovered);
   return (
     <div className="caseOne">
       <Container maxWidth="lg">
@@ -182,8 +182,8 @@ function CaseOne(props) {
                   <div className="caseOne__button">
                     <a
                       className="caseOne__underline"
-                      download="FirstNameLastName1_FirstNameLastName2_doc.xlsx"
-                      href="./assets/FirstNameLastName1_FirstNameLastName2_doc.xlsx"
+                      target="_blank"
+                      href="https://firebasestorage.googleapis.com/v0/b/revive-bfd36.appspot.com/o/FirstNameLastName1_FirstNameLastName2_doc.xlsx?alt=media&token=6e4dc697-7e3a-406f-b488-0df836138507"
                       title="xlsxFile"
                     >
                       <StyledButton variant="contained">

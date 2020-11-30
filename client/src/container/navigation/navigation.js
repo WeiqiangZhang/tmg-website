@@ -45,12 +45,14 @@ const useStylesSwap = makeStyles({
   selected: {
     "&.Mui-selected": {
       fontSize: "1.25rem",
-      color: constants.secondary2,
+      color: (props) =>
+        props.isRevive ? constants.secondary2 : constants.secondary,
     },
   },
   root: {
     flex: "none",
-    color: constants.primary2,
+    color: (props) =>
+      props.isRevive ? constants.secondary2 : constants.secondary,
   },
   label: {
     fontSize: "1.25rem",
@@ -92,7 +94,7 @@ function Navigation(props) {
   const { routeUpdate, isRevive } = props;
   const classes = useStyles({ isRevive });
   const classesMenuItem = useStylesMenuItem();
-  const classesSwap = useStylesSwap();
+  const classesSwap = useStylesSwap({ isRevive });
   const classesBottomNav = useStylesBottomNavigation({ isRevive });
   const StyledHeader = withStyles({
     h1: {
@@ -110,7 +112,13 @@ function Navigation(props) {
   })(Typography);
   const dropdownRef = useRef(null);
   const dropdownButtonRef = useRef(null);
+  const dropdown2Ref = useRef(null);
+  const dropdownButton2Ref = useRef(null);
+  const dropdown3Ref = useRef(null);
+  const dropdownButton3Ref = useRef(null);
   const [dropdownOpened, setDropdownOpened] = useState(false);
+  const [dropdown2Opened, setDropdown2Opened] = useState(false);
+  const [dropdown3Opened, setDropdown3Opened] = useState(false);
   useEffect(() => {
     const handleHoverOutside = (event) => {
       if (
@@ -132,17 +140,65 @@ function Navigation(props) {
         setDropdownOpened(true);
       }
     };
+    const handleHoverOutside2 = (event) => {
+      if (
+        dropdown2Ref.current &&
+        dropdownButton2Ref.current &&
+        !dropdown2Ref.current.contains(event.target) &&
+        !dropdownButton2Ref.current.contains(event.target)
+      ) {
+        setDropdown2Opened(false);
+      }
+    };
+    const handleHoverInside2 = (event) => {
+      if (
+        dropdown2Ref.current &&
+        dropdownButton2Ref.current &&
+        (dropdown2Ref.current.contains(event.target) ||
+          dropdownButton2Ref.current.contains(event.target))
+      ) {
+        setDropdown2Opened(true);
+      }
+    };
+    const handleHoverOutside3 = (event) => {
+      if (
+        dropdown3Ref.current &&
+        dropdownButton3Ref.current &&
+        !dropdown3Ref.current.contains(event.target) &&
+        !dropdownButton3Ref.current.contains(event.target)
+      ) {
+        setDropdown3Opened(false);
+      }
+    };
+    const handleHoverInside3 = (event) => {
+      if (
+        dropdown3Ref.current &&
+        dropdownButton3Ref.current &&
+        (dropdown3Ref.current.contains(event.target) ||
+          dropdownButton3Ref.current.contains(event.target))
+      ) {
+        setDropdown3Opened(true);
+      }
+    };
     document.addEventListener("mouseover", handleHoverOutside);
     document.addEventListener("mouseover", handleHoverInside);
+    document.addEventListener("mouseover", handleHoverOutside2);
+    document.addEventListener("mouseover", handleHoverInside2);
+    document.addEventListener("mouseover", handleHoverOutside3);
+    document.addEventListener("mouseover", handleHoverInside3);
     return () => {
       document.removeEventListener("mouseover", handleHoverOutside);
       document.removeEventListener("mouseover", handleHoverInside);
+      document.removeEventListener("mouseover", handleHoverOutside2);
+      document.removeEventListener("mouseover", handleHoverInside2);
+      document.removeEventListener("mouseover", handleHoverOutside3);
+      document.removeEventListener("mouseover", handleHoverInside3);
     };
   }, [dropdownRef, dropdownButtonRef]);
   const handleTabChange = (newValue) => {
     setValue(newValue);
     routeUpdate(newValue);
-  }
+  };
   return (
     <div className={`navigation navigation${isRevive ? "--revive" : ""}`}>
       <Container maxWidth="xl">
@@ -258,7 +314,11 @@ function Navigation(props) {
                     ref={dropdownButtonRef}
                   >
                     <div className="navigation__dropdownContainer">
-                      <StyledHeader variant="h1" ref={dropdownRef}>
+                      <StyledHeader
+                        style={{ color: constants.primary2 }}
+                        variant="h1"
+                        ref={dropdownRef}
+                      >
                         Begin your revival
                       </StyledHeader>
                       <div
@@ -266,7 +326,10 @@ function Navigation(props) {
                           dropdownOpened ? "--opened" : ""
                         }`}
                       >
-                        <button className="navigation__dropdownButton" onClick={() => handleTabChange('caseone')}>
+                        <button
+                          className="navigation__dropdownButton"
+                          onClick={() => handleTabChange("caseone")}
+                        >
                           <StyledHeader variant="subtitle1" color="primary2">
                             Case 1
                           </StyledHeader>
@@ -283,12 +346,6 @@ function Navigation(props) {
                         </button>
                       </div>
                     </div>
-                    {/* <BottomNavigationAction
-                      classes={classesRevive}
-                      label="Begin your revival"
-                      value="revival"
-                      ref={dropdownRef}
-                    /> */}
                   </Grow>
                 )}
                 {isRevive && (
@@ -296,13 +353,24 @@ function Navigation(props) {
                     value="aboutRevive"
                     in={isRevive}
                     {...{ timeout: 1500 }}
+                    ref={dropdownButton2Ref}
                   >
-                    <StyledHeader variant="h1">About</StyledHeader>
-                    {/* <BottomNavigationAction
-                      classes={classesRevive}
-                      label="About"
-                      value="aboutRevive"
-                    /> */}
+                    <div className="navigation__dropdownContainer">
+                      <StyledHeader variant="h1" ref={dropdown2Ref}>
+                        About
+                      </StyledHeader>
+                      <div
+                        className={`navigation__dropdown navigation__dropdown${
+                          dropdown2Opened ? "--opened" : ""
+                        }`}
+                      >
+                        <button className="navigation__dropdownButton">
+                          <StyledHeader variant="subtitle1" color="primary2">
+                            coming soon!
+                          </StyledHeader>
+                        </button>
+                      </div>
+                    </div>
                   </Grow>
                 )}
                 {isRevive && (
@@ -310,13 +378,24 @@ function Navigation(props) {
                     value="connections"
                     in={isRevive}
                     {...{ timeout: 2000 }}
+                    ref={dropdownButton3Ref}
                   >
-                    <StyledHeader variant="h1">CONNECTIONS</StyledHeader>
-                    {/* <BottomNavigationAction
-                      classes={classesRevive}
-                      label="CONNECTIONS"
-                      value="connections"
-                    /> */}
+                    <div className="navigation__dropdownContainer">
+                      <StyledHeader variant="h1" ref={dropdown3Ref}>
+                        CONNECTIONS
+                      </StyledHeader>
+                      <div
+                        className={`navigation__dropdown navigation__dropdown${
+                          dropdown3Opened ? "--opened" : ""
+                        }`}
+                      >
+                        <button className="navigation__dropdownButton">
+                          <StyledHeader variant="subtitle1" color="primary2">
+                            coming soon!
+                          </StyledHeader>
+                        </button>
+                      </div>
+                    </div>
                   </Grow>
                 )}
                 <BottomNavigationAction

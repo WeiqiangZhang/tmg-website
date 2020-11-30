@@ -54,7 +54,6 @@ class App extends React.Component {
   }
   render() {
     const { history } = this.props;
-    console.log(history.location.pathname.includes('/revive'))
     const isRevive = history.location.pathname.includes('/revive');
     return (
       <ThemeProvider theme={theme}>
