@@ -9,8 +9,9 @@ import { Container, Grid } from '@material-ui/core';
 import './styles/social.scss';
 class Social extends React.Component {
   render() {
+    const {isRevive} = this.props;
     return (
-      <div className="social">
+      <div className={`social social${isRevive ? '--revive' : ''}`}>
         <Container maxWidth="lg">
           <Grid container spacing={4} justify="center" alignItems="center">
             <Grid item>

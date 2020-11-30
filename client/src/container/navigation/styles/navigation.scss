@@ -20,4 +20,41 @@
             height: 3rem;
         }
     }
+    &__menu {
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+    &--revive {
+        background-color: $darkBlue;
+        border-bottom: 0.125rem solid $secondary2;
+    }
+    &__dropdownContainer{
+        position: relative;
+        margin: auto;
+    }
+    &__dropdownButton {
+        background-color: $darkBlue;
+        border: none;
+        padding: 0.375rem 0.75rem;
+        width: 100%;
+        text-align: left;
+        cursor: pointer;
+        &:hover {
+            background-color: $onyx;
+        }
+    }
+    &__dropdown {
+        padding: 0.75rem 0;
+        width: 16rem;
+        background-color: $darkBlue;
+        border-radius: 0.75rem;
+        border: 1px solid $grey4;
+        z-index: 2;
+        position: absolute;
+        visibility: hidden;
+        left: 0.75rem;
+        &--opened {
+            visibility: visible;
+        }
+    }
 }

@@ -14,6 +14,8 @@ import Team from './team';
 import Social from './container/social';
 import Login from './login';
 import Admin from './admin';
+import Revive from './revive';
+import CaseOne from './caseOne';
 import theme from './styles/theme';
 import {
   Switch,
@@ -37,6 +39,12 @@ class App extends React.Component {
       case 'team':
         history.push('/team');
         break;
+      case 'revive':
+        history.push('/revive');
+        break;
+      case 'caseone':
+        history.push('/revive/caseone');
+        break;
       case 'home':
         history.push('/');
         break;
@@ -46,11 +54,13 @@ class App extends React.Component {
   }
   render() {
     const { history } = this.props;
+    console.log(history.location.pathname.includes('/revive'))
+    const isRevive = history.location.pathname.includes('/revive');
     return (
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        {<div className="app-container">
-          <Navigation routeUpdate={(page) => this.routeUpdate(page, history)} />
+        {<div className={`app-container app-container${isRevive ? '--revive' : ''}`}>
+          <Navigation routeUpdate={(page) => this.routeUpdate(page, history)} isRevive={isRevive} />
           <Switch>
             <Route path="/about" exact>
               <About />
@@ -67,6 +77,12 @@ class App extends React.Component {
             <Route path="/team" exact>
               <Team />
             </Route>
+            <Route path="/revive" exact>
+              <Revive />
+            </Route>
+            <Route path="/revive/caseone" exact>
+              <CaseOne />
+            </Route>
             <PrivateRoute path="/admin">
               <Admin />
             </PrivateRoute>
@@ -77,7 +93,7 @@ class App extends React.Component {
               <Home />
             </Route>
           </Switch>
-          <Social />
+          <Social isRevive={isRevive} />
         </div>}
       </ThemeProvider>
     );

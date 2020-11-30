@@ -1,0 +1,64 @@
+@import 'styles/palette.scss';
+
+.caseOne {
+    margin: 2.5rem 0 5rem;
+    &__headerContainer {
+        text-align: center;
+    }
+
+    &__body {
+        margin-top: 1rem;   
+    }
+
+    &__body2 {
+        margin-top: 1rem;
+    }
+
+    &__submitContainer {
+        border: 0.125rem solid $primary2;
+        border-radius: 0.75rem;
+        padding: 1rem;
+    }
+
+    &__h3Container {
+        margin-top: 3.5rem;
+        text-align: center;
+    }
+
+    &__underline {
+        text-decoration-skip-ink: none;
+        text-decoration: none;
+        color: $primary2;
+    }
+
+    &__pdfNav {
+        display: flex;
+        border-radius: 0.75rem;
+        padding: 0.5rem;
+        background-color: $darkBlue;
+        position: absolute;
+        left: 38%;
+        bottom: 5%;
+        box-shadow: 0 0 0.25rem 0 $secondary2;
+    }
+
+    &__button {
+        margin-top: 0.5rem;
+    }
+
+    &__download {
+        text-align: right;
+        @media only screen and (min-width: 46.25rem) {
+            width: 38.25rem;
+        }
+    }
+
+    &__pdfPage {
+        canvas {
+            @media only screen and (max-width: 46.25rem) {
+                width: 100% !important;
+                height: auto !important;
+            }
+        }
+    }
+}
