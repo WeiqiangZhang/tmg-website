@@ -3,7 +3,8 @@ import { Container, Grid, Button } from "@material-ui/core";
 import { Typography, withStyles } from "@material-ui/core";
 import { constants } from "styles/constants";
 import { Document, Page, pdfjs } from "react-pdf";
-import Rules from "./assets/Rules.pdf";
+import RevivePrelim from "./assets/RevivePrelim.pdf";
+import { isMobile } from "react-device-detect";
 
 import "./styles/caseOne.scss";
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
@@ -12,6 +13,9 @@ function CaseOne(props) {
     h2: {
       color: constants.grey4,
       textAlign: "center",
+      "@media (max-width: 40.3125rem)": {
+        fontSize: "1.5rem",
+      },
     },
     h3: {
       fontFamily: "UniSansHeavy",
@@ -20,9 +24,12 @@ function CaseOne(props) {
     },
     body2: {
       fontFamily: "FuturaPTCondBook",
-      color: constants.grey4,
+      color: constants.white,
       fontSize: "1.75rem",
       textAlign: "center",
+      "@media (max-width: 40.3125rem)": {
+        fontSize: "1rem",
+      },
     },
     body1: {
       color: constants.grey4,
@@ -37,6 +44,14 @@ function CaseOne(props) {
       color: constants.grey4,
       "&:hover": {
         backgroundColor: constants.secondary2,
+      },
+      "@media (max-width: 40.3125rem)": {
+        width: "7.5rem",
+      },
+    },
+    label: {
+      "@media (max-width: 40.3125rem)": {
+        fontSize: "0.675rem",
       },
     },
   })(Button);
@@ -54,11 +69,23 @@ function CaseOne(props) {
   const pdf2Ref = useRef(null);
   const [pdfHovered, setPdfHovered] = useState(false);
   const [pdf2Hovered, setPdf2Hovered] = useState(false);
+  const [previousPage, setPreviousPage] = useState(
+    <div className="caseOne__pagePlaceholder" />
+  );
+  const [previousPage2, setPreviousPage2] = useState(
+    <div className="caseOne__pagePlaceholder" />
+  );
   function onDocumentLoadSuccess({ numPages }) {
     setNumPages(numPages);
   }
   function onDocument2LoadSuccess({ numPages }) {
     setNumPages2(numPages);
+  }
+  function onPageLoadSuccess({ pageNumber }) {
+    setPreviousPage(<Page pageNumber={pageNumber} />);
+  }
+  function onPage2LoadSuccess({ pageNumber }) {
+    setPreviousPage2(<Page pageNumber={pageNumber} />);
   }
   useEffect(() => {
     const handleHoverOutside = (event) => {
@@ -113,94 +140,78 @@ function CaseOne(props) {
         <Grid container justify="center">
           <Grid item md={12} xs={12}>
             <div className="caseOne__body">
-              <StyledHeader
-                variant="body2"
-                style={{ color: constants.white, textAlign: "center" }}
-              >
+              <StyledHeader variant="body2" style={{ textAlign: "center" }}>
                 Not only does the following case mark the beginning of your
-                adventure with us, but it's an ode to months and months of
-                brainstorming, planning and execution by our leadersheep team at
-                The Marketing Group. REVIVE is what happens when you take a
-                group of high-octane individuals and tell them to revive a
-                marketing club from the ashes of the unknown, to create a
-                student conference like none other and to finally provide
-                students around the world with an opportunity to spread their
-                marketing wings in a real-world setting.
+                journey with us, but it's also an ode to months of brainstorming
+                and planning by our leadersheep team to revive a marketing club
+                from the ashes of the unknown, create a student conference like
+                none other and provide students around the world with an
+                opportunity to spread their marketing wings in a realistic
+                setting.
               </StyledHeader>
             </div>
           </Grid>
           <Grid item md={12} xs={12}>
             <div className="caseOne__body2">
-              <StyledHeader
-                variant="body2"
-                style={{ color: constants.white, textAlign: "center" }}
-              >
-                But enough about us - it's now your turn. Your journey starts
-                here, so go and make the most of it.
+              <StyledHeader variant="body2" style={{ textAlign: "center" }}>
+                Now it's your turn. Your journey starts here, so go and make the
+                most of it.
               </StyledHeader>
             </div>
             <div className="caseOne__body2">
-              <StyledHeader
-                variant="body2"
-                style={{ color: constants.white, textAlign: "center" }}
-              >
-                After the year we've all been through, we could all use a bit of
-                revival.
+              <StyledHeader variant="body2" style={{ textAlign: "center" }}>
+                After the year we've all been through, we could all use a bit of{" "}
+                <StyledHeader
+                  variant="body2"
+                  style={{
+                    display: "inline",
+                    textAlign: "center",
+                    fontStyle: "italic",
+                  }}
+                >
+                  revival.
+                </StyledHeader>
               </StyledHeader>
             </div>
           </Grid>
           <Grid item md={12} xs={12}>
             <div className="caseOne__h3Container">
-              <StyledHeader variant="h3">SUBMIT YOUR SOLUTION</StyledHeader>
+              <StyledHeader variant="h2" style={{ fontFamily: "UniSansHeavy" }}>
+                SUBMIT YOUR SOLUTION
+              </StyledHeader>
               <div className="caseOne__body2">
-                <StyledHeader
-                  variant="body2"
-                  style={{ color: constants.white }}
-                >
-                  Already done? Click below to submit.
+                <StyledHeader variant="body2">
+                  Already done? Click below to submit. Remember to submit your
+                  key information document alongside your video file above.
+                  Click below to download the template. Ensure you are following
+                  the rules and regulations listed below. Failure to adequately
+                  follow these may risk disqualification.
                 </StyledHeader>
-                <div className="caseOne__button">
-                  <StyledButton
-                    variant="contained"
-                    onClick={() =>
-                      window.open(
-                        "https://www.dropbox.com/request/FD0zlvUKDIWlYUu4XETl",
-                        "_blank"
-                      )
-                    }
-                  >
-                    Submit solution
-                  </StyledButton>
-                </div>
-                <div className="caseOne__body2">
-                  <StyledHeader
-                    variant="body2"
-                    style={{ color: constants.white }}
-                  >
-                    Remember to submit your key information document alongside
-                    your video file above. Click below to download the template.
-                  </StyledHeader>
+                <div className="caseOne__buttonContainer">
+                  <div className="caseOne__submitButton">
+                    <StyledButton
+                      variant="contained"
+                      onClick={() =>
+                        window.open(
+                          "https://www.dropbox.com/request/FD0zlvUKDIWlYUu4XETl",
+                          "_blank"
+                        )
+                      }
+                    >
+                      Submit solution
+                    </StyledButton>
+                  </div>
                   <div className="caseOne__button">
                     <a
                       className="caseOne__underline"
                       target="_blank"
-                      href="https://firebasestorage.googleapis.com/v0/b/revive-bfd36.appspot.com/o/FirstNameLastName1_FirstNameLastName2_doc.xlsx?alt=media&token=6e4dc697-7e3a-406f-b488-0df836138507"
+                      href="https://firebasestorage.googleapis.com/v0/b/revive-bfd36.appspot.com/o/RevivePrelim.pdf?alt=media&token=f9b872ac-e8aa-42cb-b830-cbd14e25fabb"
                       title="xlsxFile"
                     >
                       <StyledButton variant="contained">
                         DOWNLOAD KEY INFO TEMPLATE
                       </StyledButton>
                     </a>
-                    <div className="caseOne__body2">
-                      <StyledHeader
-                        variant="body2"
-                        style={{ color: constants.white }}
-                      >
-                        Ensure you are following the rules and regulations
-                        listed below. Failure to adequately follow these may
-                        risk disqualification.
-                      </StyledHeader>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -208,7 +219,11 @@ function CaseOne(props) {
           </Grid>
         </Grid>
         <div className="caseOne__h3Container">
-          <StyledHeader variant="h3" className="caseOne__header">
+          <StyledHeader
+            variant="h2"
+            className="caseOne__header"
+            style={{ fontFamily: "UniSansHeavy" }}
+          >
             PRELIMINARY CASE
           </StyledHeader>
         </div>
@@ -220,7 +235,7 @@ function CaseOne(props) {
                   {" "}
                   <a
                     className="caseOne__underline"
-                    href="https://www.facebook.com/HomeOfThePinkSheep"
+                    href="https://firebasestorage.googleapis.com/v0/b/revive-bfd36.appspot.com/o/RevivePrelim.pdf?alt=media&token=f9b872ac-e8aa-42cb-b830-cbd14e25fabb"
                     target="_blank"
                   >
                     Download
@@ -230,20 +245,37 @@ function CaseOne(props) {
             </Grid>
             <Grid item md={12} xs={12}>
               <div ref={pdfRef}>
-                <Document file={Rules} onLoadSuccess={onDocumentLoadSuccess}>
-                  <Page pageNumber={pageNumber} className="caseOne__pdfPage">
+                <Document
+                  file={RevivePrelim}
+                  onLoadSuccess={onDocumentLoadSuccess}
+                  loading={
+                    <StyledHeader variant="body2">Loading PDF...</StyledHeader>
+                  }
+                >
+                  <Page
+                    pageNumber={pageNumber}
+                    onLoadSuccess={onPageLoadSuccess}
+                    className="caseOne__pdfPage"
+                    loading={previousPage}
+                    renderTextLayer={!isMobile}
+                  >
                     {pdfHovered && (
                       <div className="caseOne__pdfNav">
                         <StyledNavButton
+                          style={{ minWidth: 0 }}
                           disabled={pageNumber === 1}
                           onClick={() => setPageNumber(pageNumber - 1)}
                         >
                           {"<"}
                         </StyledNavButton>
-                        <StyledHeader variant="body2">
+                        <StyledHeader
+                          variant="body2"
+                          style={{ margin: "auto" }}
+                        >
                           Page {pageNumber} of {numPages}
                         </StyledHeader>
                         <StyledNavButton
+                          style={{ minWidth: 0 }}
                           disabled={pageNumber === numPages}
                           onClick={() => setPageNumber(pageNumber + 1)}
                         >
@@ -258,7 +290,11 @@ function CaseOne(props) {
           </Grid>
         </Container>
         <div className="caseOne__h3Container">
-          <StyledHeader variant="h3" className="caseOne__header">
+          <StyledHeader
+            variant="h2"
+            className="caseOne__header"
+            style={{ fontFamily: "UniSansHeavy" }}
+          >
             RULES AND REGULATIONS
           </StyledHeader>
         </div>
@@ -270,7 +306,7 @@ function CaseOne(props) {
                   {" "}
                   <a
                     className="caseOne__underline"
-                    href="https://www.facebook.com/HomeOfThePinkSheep"
+                    href="https://firebasestorage.googleapis.com/v0/b/revive-bfd36.appspot.com/o/RevivePrelim.pdf?alt=media&token=f9b872ac-e8aa-42cb-b830-cbd14e25fabb"
                     target="_blank"
                   >
                     Download
@@ -280,20 +316,37 @@ function CaseOne(props) {
             </Grid>
             <Grid item md={12} xs={12}>
               <div ref={pdf2Ref}>
-                <Document file={Rules} onLoadSuccess={onDocument2LoadSuccess}>
-                  <Page pageNumber={pageNumber2} className="caseOne__pdfPage">
+                <Document
+                  file={RevivePrelim}
+                  onLoadSuccess={onDocument2LoadSuccess}
+                  loading={
+                    <StyledHeader variant="body2">Loading PDF...</StyledHeader>
+                  }
+                >
+                  <Page
+                    pageNumber={pageNumber2}
+                    onLoadSuccess={onPage2LoadSuccess}
+                    className="caseOne__pdfPage"
+                    loading={previousPage}
+                    renderTextLayer={!isMobile}
+                  >
                     {pdf2Hovered && (
                       <div className="caseOne__pdfNav">
                         <StyledNavButton
+                          style={{ minWidth: 0 }}
                           disabled={pageNumber2 === 1}
                           onClick={() => setPageNumber2(pageNumber2 - 1)}
                         >
                           {"<"}
                         </StyledNavButton>
-                        <StyledHeader variant="body2">
+                        <StyledHeader
+                          variant="body2"
+                          style={{ margin: "auto" }}
+                        >
                           Page {pageNumber2} of {numPages2}
                         </StyledHeader>
                         <StyledNavButton
+                          style={{ minWidth: 0 }}
                           disabled={pageNumber2 === numPages2}
                           onClick={() => setPageNumber2(pageNumber2 + 1)}
                         >

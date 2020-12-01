@@ -14,3 +14,7 @@ export const constants = {
   darkBlue: '#1b2432',
   onyx: '#403f45',
 };
+
+export const breakpoints = {
+  sm: '40.3125rem',
+};

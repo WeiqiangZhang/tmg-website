@@ -15,7 +15,7 @@ import reviveLogo from "./assets/logo-revive.png";
 import { Container } from "@material-ui/core";
 import { isMobile } from "react-device-detect";
 import hamburgerMenu from "./assets/hamburger-menu.png";
-import { constants } from "styles/constants";
+import { constants, breakpoints } from "styles/constants";
 
 import "./styles/navigation.scss";
 
@@ -53,9 +53,15 @@ const useStylesSwap = makeStyles({
     flex: "none",
     color: (props) =>
       props.isRevive ? constants.secondary2 : constants.secondary,
+    '@media (max-width: 40.3125rem)': {
+      minWidth: "0",
+    },
   },
   label: {
     fontSize: "1.25rem",
+    '@media (max-width: 40.3125rem)': {
+      fontSize: "0.75rem",
+    },
   },
 });
 
@@ -104,10 +110,16 @@ function Navigation(props) {
       padding: "0.375rem 0.75rem",
       margin: "auto",
       cursor: "pointer",
+      '@media (max-width: 40.3125rem)': {
+        fontSize: "0.75rem",
+      }
     },
     subtitle1: {
       fontSize: "1rem",
       color: constants.grey4,
+      '@media (max-width: 40.3125rem)': {
+        fontSize: "0.75rem",
+      },
     },
   })(Typography);
   const dropdownRef = useRef(null);

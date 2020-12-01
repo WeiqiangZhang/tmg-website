@@ -42,6 +42,9 @@
         &:hover {
             background-color: $onyx;
         }
+        @media only screen and (max-width: 45rem) {
+            padding: 0rem 0.25rem;
+        }
     }
     &__dropdown {
         padding: 0.75rem 0;
@@ -53,6 +56,11 @@
         position: absolute;
         visibility: hidden;
         right: 0.75rem;
+        @media only screen and (max-width: 45rem) {
+            width: 7.5rem;
+            left: 1rem;
+            padding: 0.25rem 0;
+        }
         &--opened {
             visibility: visible;
         }

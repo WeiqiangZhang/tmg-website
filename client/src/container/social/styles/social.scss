@@ -4,9 +4,16 @@
     padding: 1rem;
     background-color: $maroon;
     margin-top: auto;
+    @media only screen and (max-width: 40.3125rem) {
+        padding: 0.5rem;
+    }
     &__icon {
         width: 2.5rem;
         height: 2.5rem;
+        @media only screen and (max-width: 40.3125rem) {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
         &:hover {
             opacity: 0.8;
             transition: opacity 0.5s;
