@@ -19,8 +19,18 @@
 }
 
 @font-face {
+  font-family: 'UniSansHeavy';
+  src: local('UniSansHeavy'), url(./fonts/uni-sans.heavy-caps.otf) format('opentype');
+}
+
+@font-face {
   font-family: 'FuturaPTCondMedium';
   src: local('FuturaPTCondMedium'), url(./fonts/FuturaPTCondMedium.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'FuturaPTCondBook';
+  src: local('FuturaPTCondBook'), url(./fonts/Futura-PT-Cond-Book.ttf) format('truetype');
 }
 
 body {

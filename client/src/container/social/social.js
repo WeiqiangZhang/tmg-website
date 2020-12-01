@@ -5,21 +5,23 @@ import tiktok from './assets/tiktok-white.png';
 import gmail from './assets/gmail-white.png';
 import linkedin from './assets/linkedin-white.png';
 import { Container, Grid } from '@material-ui/core';
+import { isMobile } from "react-device-detect";
 
 import './styles/social.scss';
 class Social extends React.Component {
   render() {
+    const {isRevive} = this.props;
     return (
-      <div className="social">
+      <div className={`social social${isRevive ? '--revive' : ''}`}>
         <Container maxWidth="lg">
-          <Grid container spacing={4} justify="center" alignItems="center">
+          <Grid container spacing={isMobile ? 2 : 4} justify="center" alignItems="center">
             <Grid item>
               <a href="https://www.facebook.com/HomeOfThePinkSheep" target="_blank" rel="noopener noreferrer">
                 <img className="social__icon" src={facebook} alt="facebook" />
               </a>
             </Grid>
             <Grid item>
-              <a href="https://www.instagram.com/the.marketing.group/" target="_blank" rel="noopener noreferrer">
+              <a href={isRevive ? "https://www.instagram.com/revivecompetition/" : "https://www.instagram.com/the.marketing.group/"} target="_blank" rel="noopener noreferrer">
                 <img className="social__icon" src={instagram} alt="instagram" />
               </a>
             </Grid>

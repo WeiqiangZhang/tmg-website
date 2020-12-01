@@ -71,8 +71,14 @@ export default createMuiTheme({
     primary: {
       main: constants.primary
     },
+    primary2: {
+      main: constants.primary2
+    },
     secondary: {
       main: constants.secondary
+    },
+    secondary2: {
+      main: constants.secondary2
     },
     grey1: {
       main: constants.grey1
@@ -83,12 +89,21 @@ export default createMuiTheme({
     grey3: {
       main: constants.grey3
     },
+    grey4: {
+      main: constants.grey4
+    },
     blueGrey: {
       main: constants.blueGrey
     },
     blue: {
       main: constants.blue
     },
+    darkBlue: {
+      main: constants.darkBlue
+    },
+    onyx: {
+      main: constants.onyx
+    }
   },
   typography: {
     fontFamily: 'UniSans, UniSansThin, UniSansItalic, UniSansItalicThin, FuturaPTCondMedium',

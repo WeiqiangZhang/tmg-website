@@ -1,0 +1,91 @@
+@import 'styles/palette.scss';
+
+.caseOne {
+    margin: 2.5rem 0 5rem;
+    &__headerContainer {
+        text-align: center;
+    }
+
+    &__body {
+        margin-top: 1rem;
+        @media only screen and (max-width: 40.3125rem) {
+            margin-top: 0.75rem;
+        }
+    }
+
+    &__body2 {
+        margin-top: 1rem;
+        @media only screen and (max-width: 40.3125rem) {
+            margin-top: 0.75rem;
+        }
+    }
+
+    &__submitContainer {
+        border: 0.125rem solid $primary2;
+        border-radius: 0.75rem;
+        padding: 1rem;
+    }
+
+    &__h3Container {
+        margin-top: 3.5rem;
+        text-align: center;
+        @media only screen and (max-width: 40.3125rem) {
+            margin-top: 1.5rem;
+        }
+    }
+
+    &__underline {
+        text-decoration-skip-ink: none;
+        color: $primary2;
+    }
+
+    &__pdfNav {
+        display: flex;
+        border-radius: 0.75rem;
+        padding: 0.5rem;
+        background-color: $darkBlue;
+        position: absolute;
+        left: 43%;
+        bottom: 5%;
+        box-shadow: 0 0 0.25rem 0 $secondary2;
+        @media only screen and (max-width: 40.3125rem) {
+            padding: 0.25rem;
+            left: 35%;
+        }
+    }
+
+    &__button {
+        margin-top: 0.5rem;
+    }
+
+    &__download {
+        text-align: right;
+        @media only screen and (min-width: 40.3125rem) {
+            width: 38.25rem;
+        }
+    }
+
+    &__pagePlaceholder {
+        width: 612px;
+        height: 791px;
+        background-color: $darkBlue;
+    }
+
+    &__submitButton {
+        margin: 0.5rem 1rem 0 0;
+    }
+
+    &__pdfPage {
+        canvas {
+            @media only screen and (max-width: 40.3125rem) {
+                width: 100% !important;
+                height: auto !important;
+            }
+        }
+    }
+
+    &__buttonContainer {
+        display: flex;
+        justify-content: center;
+    }
+}

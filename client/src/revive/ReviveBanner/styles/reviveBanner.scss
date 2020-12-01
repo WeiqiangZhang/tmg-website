@@ -1,0 +1,18 @@
+@import 'styles/palette.scss';
+
+.reviveBanner {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 15rem;
+    background: linear-gradient(90deg, $primary2 0%, $secondary2 100%);
+    padding: 1rem 0;
+    @media (max-width: 75rem) {
+        min-height: 7.5rem;    
+    }
+    text-align: center;
+    &__text {
+        padding-right: 0.25rem;
+        color: $grey4;
+    }
+}
