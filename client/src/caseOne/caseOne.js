@@ -4,6 +4,7 @@ import { Typography, withStyles } from "@material-ui/core";
 import { constants } from "styles/constants";
 import { Document, Page, pdfjs } from "react-pdf";
 import RevivePrelim from "./assets/RevivePrelim.pdf";
+import Rules from "./assets/Rules.pdf";
 import { isMobile } from "react-device-detect";
 
 import "./styles/caseOne.scss";
@@ -205,7 +206,7 @@ function CaseOne(props) {
                     <a
                       className="caseOne__underline"
                       target="_blank"
-                      href="https://firebasestorage.googleapis.com/v0/b/revive-bfd36.appspot.com/o/RevivePrelim.pdf?alt=media&token=f9b872ac-e8aa-42cb-b830-cbd14e25fabb"
+                      href="https://firebasestorage.googleapis.com/v0/b/revive-bfd36.appspot.com/o/FirstNameLastName1_FirstNameLastName2_doc.xlsx?alt=media&token=6e4dc697-7e3a-406f-b488-0df836138507"
                       title="xlsxFile"
                     >
                       <StyledButton variant="contained">
@@ -306,7 +307,7 @@ function CaseOne(props) {
                   {" "}
                   <a
                     className="caseOne__underline"
-                    href="https://firebasestorage.googleapis.com/v0/b/revive-bfd36.appspot.com/o/RevivePrelim.pdf?alt=media&token=f9b872ac-e8aa-42cb-b830-cbd14e25fabb"
+                    href="https://firebasestorage.googleapis.com/v0/b/revive-bfd36.appspot.com/o/Rules.pdf?alt=media&token=5b77c2b2-c5ac-4ba4-b8b1-304f29dd5b6a"
                     target="_blank"
                   >
                     Download
@@ -317,7 +318,7 @@ function CaseOne(props) {
             <Grid item md={12} xs={12}>
               <div ref={pdf2Ref}>
                 <Document
-                  file={RevivePrelim}
+                  file={Rules}
                   onLoadSuccess={onDocument2LoadSuccess}
                   loading={
                     <StyledHeader variant="body2">Loading PDF...</StyledHeader>
