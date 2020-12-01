@@ -20,7 +20,7 @@ class Social extends React.Component {
               </a>
             </Grid>
             <Grid item>
-              <a href="https://www.instagram.com/the.marketing.group/" target="_blank" rel="noopener noreferrer">
+              <a href={isRevive ? "https://www.instagram.com/revivecompetition/" : "https://www.instagram.com/the.marketing.group/"} target="_blank" rel="noopener noreferrer">
                 <img className="social__icon" src={instagram} alt="instagram" />
               </a>
             </Grid>

@@ -14,10 +14,12 @@ function CaseOne(props) {
       textAlign: "center",
     },
     h3: {
+      fontFamily: "UniSansHeavy",
       color: constants.white,
       textAlign: "center",
     },
     body2: {
+      fontFamily: "FuturaPTCondBook",
       color: constants.grey4,
       fontSize: "1.75rem",
       textAlign: "center",
@@ -48,7 +50,6 @@ function CaseOne(props) {
   const [pageNumber, setPageNumber] = useState(1);
   const [numPages2, setNumPages2] = useState(null);
   const [pageNumber2, setPageNumber2] = useState(1);
-  const [excel, setExcel] = useState(null);
   const pdfRef = useRef(null);
   const pdf2Ref = useRef(null);
   const [pdfHovered, setPdfHovered] = useState(false);
@@ -114,7 +115,7 @@ function CaseOne(props) {
             <div className="caseOne__body">
               <StyledHeader
                 variant="body2"
-                style={{ color: constants.secondary2, textAlign: "center" }}
+                style={{ color: constants.white, textAlign: "center" }}
               >
                 Not only does the following case mark the beginning of your
                 adventure with us, but it's an ode to months and months of
