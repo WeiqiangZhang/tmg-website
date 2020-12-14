@@ -142,34 +142,26 @@ function CaseOne(props) {
           <Grid item md={12} xs={12}>
             <div className="caseOne__body">
               <StyledHeader variant="body2" style={{ textAlign: "center" }}>
-                Not only does the following case mark the beginning of your
-                journey with us, but it's also an ode to months of brainstorming
-                and planning by our leadersheep team to revive a marketing club
-                from the ashes of the unknown, create a student conference like
-                none other and provide students around the world with an
-                opportunity to spread their marketing wings in a realistic
-                setting.
+                Not only does the following case mark the beginning of your journey with us, it's also an ode to months of brainstorming, 
+                planning and execution by our leadersheep team at The Marketing Group. 
+                Our goal was to revive a marketing club from the ashes of the unknown, create a student conference like none other and 
+                provide students around the world with an opportunity to spread their marketing wings in a realistic setting. Consider this goal achieved. 
               </StyledHeader>
             </div>
           </Grid>
           <Grid item md={12} xs={12}>
             <div className="caseOne__body2">
               <StyledHeader variant="body2" style={{ textAlign: "center" }}>
-                Now it's your turn. Your journey starts here, so go and make the
-                most of it.
+                Now it's your turn. Your journey starts here, so go and make the most of it. 
               </StyledHeader>
             </div>
             <div className="caseOne__body2">
               <StyledHeader variant="body2" style={{ textAlign: "center" }}>
                 After the year we've all been through, we could all use a bit of{" "}
                 <StyledHeader
-                  variant="body2"
-                  style={{
-                    display: "inline",
-                    textAlign: "center",
-                    fontStyle: "italic",
-                  }}
-                >
+              variant="body2"
+              style={{ color: constants.primary2, display: "inline" }}
+            >
                   revival.
                 </StyledHeader>
               </StyledHeader>
@@ -182,11 +174,10 @@ function CaseOne(props) {
               </StyledHeader>
               <div className="caseOne__body2">
                 <StyledHeader variant="body2">
-                  Already done? Click below to submit. Remember to submit your
-                  key information document alongside your video file above.
-                  Click below to download the template. Ensure you are following
-                  the rules and regulations listed below. Failure to adequately
-                  follow these may risk disqualification.
+                  Remember to submit your key information document alongside your video file.
+                </StyledHeader>
+                <StyledHeader variant="body2">
+                  Ensure you are following all rules and regulations listed below, or otherwise risk disqualification. 
                 </StyledHeader>
                 <div className="caseOne__buttonContainer">
                   <div className="caseOne__submitButton">
@@ -307,7 +298,7 @@ function CaseOne(props) {
                   {" "}
                   <a
                     className="caseOne__underline"
-                    href="https://firebasestorage.googleapis.com/v0/b/revive-bfd36.appspot.com/o/Rules.pdf?alt=media&token=5b77c2b2-c5ac-4ba4-b8b1-304f29dd5b6a"
+                    href="https://firebasestorage.googleapis.com/v0/b/revive-bfd36.appspot.com/o/Rules.pdf?alt=media&token=bd930faf-381b-4bdd-8ceb-53b61036035f"
                     target="_blank"
                   >
                     Download
