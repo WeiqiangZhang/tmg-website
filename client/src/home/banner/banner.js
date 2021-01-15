@@ -22,7 +22,7 @@ class Banner extends React.Component {
   }
 
   typeWriter() {
-    const texts = ["OUR HERD, FELLOW PINK SHEEP", "THE HOME OF MARKETING", "THE MARKETING GROUP"]
+    const texts = ["THE HERD", "THE HOME OF MARKETING", "THE MARKETING GROUP"]
     this.intervalId1 = setInterval(() => {
       this.setState(prevState => ({
         count: (prevState.count === texts.length - 1 ? 0 : prevState.count + 1),

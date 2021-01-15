@@ -1,0 +1,18 @@
+@import 'styles/palette.scss';
+
+.sponsor {
+    margin: 2.5rem 0 5rem;
+    &__divider {
+        border: 0.125rem solid $primary2;
+    }
+    &__logo {
+        width: 10rem;
+    }
+    &__description {
+        padding: 1rem;
+        background-color: $onyx;
+        &:not(:first-child) {
+            border-top: 0.125rem solid $primary2;
+        }
+    }
+}

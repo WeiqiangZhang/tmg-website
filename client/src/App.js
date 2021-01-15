@@ -16,6 +16,10 @@ import Login from './login';
 import Admin from './admin';
 import Revive from './revive';
 import CaseOne from './caseOne';
+import Timeline from './timeline';
+import History from './history';
+import Faq from './faq';
+import Sponsor from './sponsor';
 import theme from './styles/theme';
 import {
   Switch,
@@ -44,6 +48,18 @@ class App extends React.Component {
         break;
       case 'caseone':
         history.push('/revive/caseone');
+        break;
+      case 'timeline':
+        history.push('/revive/timeline');
+        break;
+      case 'history':
+        history.push('/revive/history');
+        break;
+      case 'faq':
+        history.push('/revive/faq');
+        break;
+      case 'sponsor':
+        history.push('/revive/sponsor');
         break;
       case 'home':
         history.push('/');
@@ -77,10 +93,22 @@ class App extends React.Component {
               <Team />
             </Route>
             <Route path="/revive" exact>
-              <Revive />
+              <Revive isRevive={isRevive} />
             </Route>
             <Route path="/revive/caseone" exact>
               <CaseOne />
+            </Route>
+            <Route path="/revive/timeline" exact>
+              <Timeline />
+            </Route>
+            <Route path="/revive/history" exact>
+              <History />
+            </Route>
+            <Route path="/revive/faq" exact>
+              <Faq />
+            </Route>
+            <Route path="/revive/sponsor" exact>
+              <Sponsor />
             </Route>
             <PrivateRoute path="/admin">
               <Admin />

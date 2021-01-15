@@ -1,0 +1,20 @@
+@import 'styles/palette.scss';
+
+.history {
+    margin: 2.5rem 0 5rem;
+    &__header {
+        text-align: center;
+    }
+    &__body {
+        margin-top: 0.75rem;
+    }
+    &__faq {
+        margin-top: 1rem;
+    }
+    &__question {
+        margin: 0.5rem 0;
+    }
+    &__answer {
+        margin: 0.5rem 0;
+    }
+}

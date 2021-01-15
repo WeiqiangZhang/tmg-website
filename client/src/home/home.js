@@ -1,6 +1,6 @@
 import React from 'react';
 import Banner from './banner';
-import Sponsor from './sponsor';
+import Pictures from './pictures';
 import { Container } from '@material-ui/core';
 
 import './styles/home.scss';
@@ -11,7 +11,7 @@ class Home extends React.Component {
       <div className="home">
         <Banner />
         <Container maxWidth="lg">
-          {/* <Sponsor /> */}
+          <Pictures />
         </Container>
       </div>
     );
