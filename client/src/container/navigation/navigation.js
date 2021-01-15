@@ -376,9 +376,19 @@ function Navigation(props) {
                           dropdown2Opened ? "--opened" : ""
                         }`}
                       >
-                        <button className="navigation__dropdownButton">
+                        <button className="navigation__dropdownButton" onClick={() => handleTabChange("timeline")}>
                           <StyledHeader variant="subtitle1" color="primary2">
-                            coming soon!
+                            TIMELINE
+                          </StyledHeader>
+                        </button>
+                        <button className="navigation__dropdownButton" onClick={() => handleTabChange("history")}>
+                          <StyledHeader variant="subtitle1" color="primary2">
+                            HISTORY
+                          </StyledHeader>
+                        </button>
+                        <button className="navigation__dropdownButton" onClick={() => handleTabChange("faq")}>
+                          <StyledHeader variant="subtitle1" color="primary2">
+                            FAQ
                           </StyledHeader>
                         </button>
                       </div>
@@ -394,7 +404,7 @@ function Navigation(props) {
                   >
                     <div className="navigation__dropdownContainer">
                       <StyledHeader variant="h1" ref={dropdown3Ref}>
-                        CONNECTIONS
+                      CORPORATE
                       </StyledHeader>
                       <div
                         className={`navigation__dropdown navigation__dropdown${
@@ -402,8 +412,18 @@ function Navigation(props) {
                         }`}
                       >
                         <button className="navigation__dropdownButton">
+                          <StyledHeader variant="subtitle1" color="primary2" onClick={() => handleTabChange("sponsor")}>
+                            SPONSORS
+                          </StyledHeader>
+                        </button>
+                        <button className="navigation__dropdownButton">
                           <StyledHeader variant="subtitle1" color="primary2">
-                            coming soon!
+                            PARTNERS - Coming Soon!  
+                          </StyledHeader>
+                        </button>
+                        <button className="navigation__dropdownButton">
+                          <StyledHeader variant="subtitle1" color="primary2">
+                            JOIN US - Coming Soon!  
                           </StyledHeader>
                         </button>
                       </div>

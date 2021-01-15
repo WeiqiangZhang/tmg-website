@@ -1,0 +1,14 @@
+@import 'styles/palette.scss';
+
+.faq {
+    margin: 2.5rem 0 5rem;
+    &__header {
+        text-align: center;
+    }
+    &__body {
+        margin-top: 0.75rem;
+    }
+    &__questions {
+        margin-top: 0.75rem;
+    }
+}

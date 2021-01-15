@@ -129,7 +129,7 @@ function CaseOne(props) {
       <Container maxWidth="lg">
         <div className="caseOne__headerContainer">
           <StyledHeader variant="h2" className="caseOne__header">
-            We've hinted at this for a long time, and it's finally here.{" "}
+            It's finally here.{" "}
             <StyledHeader
               variant="h2"
               style={{ color: constants.primary2, display: "inline" }}
@@ -166,6 +166,11 @@ function CaseOne(props) {
                 </StyledHeader>
               </StyledHeader>
             </div>
+            <div className="caseOne__body2">
+              <StyledHeader variant="body2" style={{ textAlign: "center", fontStyle: "italic" }}>
+                — TMG Executive Committee —
+              </StyledHeader>
+            </div>
           </Grid>
           <Grid item md={12} xs={12}>
             <div className="caseOne__h3Container">
@@ -174,7 +179,7 @@ function CaseOne(props) {
               </StyledHeader>
               <div className="caseOne__body2">
                 <StyledHeader variant="body2">
-                  Remember to submit your key information document alongside your video file.
+                  Remember to submit your contact sheet alongside your video file.
                 </StyledHeader>
                 <StyledHeader variant="body2">
                   Ensure you are following all rules and regulations listed below, or otherwise risk disqualification. 
@@ -201,7 +206,7 @@ function CaseOne(props) {
                       title="xlsxFile"
                     >
                       <StyledButton variant="contained">
-                        DOWNLOAD KEY INFO TEMPLATE
+                        DOWNLOAD CONTACT SHEET
                       </StyledButton>
                     </a>
                   </div>
