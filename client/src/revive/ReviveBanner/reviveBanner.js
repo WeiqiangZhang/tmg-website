@@ -22,7 +22,7 @@ class ReviveBanner extends React.Component {
   }
 
   typeWriter() {
-    const texts = ["WELCOME TO REVIVE", "SAVE THE DATE: JANUARY 18TH", "BEGIN YOUR REVIVAL TODAY"]
+    const texts = ["WELCOME TO REVIVE", "SAVE THE DATE: JANUARY 25TH", "BEGIN YOUR REVIVAL TODAY"]
     this.intervalId1 = setInterval(() => {
       this.setState(prevState => ({
         count: (prevState.count === texts.length - 1 ? 0 : prevState.count + 1),
