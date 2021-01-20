@@ -5,4 +5,13 @@
     &__container {
         margin-top: 0.75rem;
     }
+    &__image {
+        max-width: 100%;
+        max-height: 100%;
+        &--hidden {
+            max-width: 0;
+            max-height: 0;
+            visibility: hidden;    
+        }
+    }
 }

@@ -20,6 +20,7 @@ import Timeline from './timeline';
 import History from './history';
 import Faq from './faq';
 import Sponsor from './sponsor';
+import Package from './package';
 import theme from './styles/theme';
 import {
   Switch,
@@ -61,6 +62,9 @@ class App extends React.Component {
       case 'sponsor':
         history.push('/revive/sponsor');
         break;
+      case 'package':
+        history.push('/revive/package');
+        break; 
       case 'home':
         history.push('/');
         break;
@@ -109,6 +113,9 @@ class App extends React.Component {
             </Route>
             <Route path="/revive/sponsor" exact>
               <Sponsor />
+            </Route>
+            <Route path="/revive/package" exact>
+              <Package />
             </Route>
             <PrivateRoute path="/admin">
               <Admin />
