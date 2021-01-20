@@ -8,15 +8,15 @@ import "./styles/faq.scss";
 class Faq extends React.Component {
   render() {
     const questions = [
-      "Q: What is Revive?",
+      "Q: What is REVIVE?",
       "Q: Do you have to be in teams to compete?",
-      "Q: How much does Revive cost?",
+      "Q: How much does REVIVE cost?",
       "Q: Where do I sign up?",
       "Q: Do I have to be in a business program to participate?",
-      "Q: What are the prizes for Revive?",
+      "Q: What are the prizes for REVIVE?",
       "Q: I’m a recent undergraduate student. Can I still participate?",
       "Q: What is a simulation and how does it work?",
-      "Q: What is the Prelim case submission format?",
+      "Q: What is the format of the Preliminary case?",
     ];
     const answers = [
       "A competition where aspiring marketers gather to challenge and level up their marketing skills in a simulated real-world setting.",
@@ -24,7 +24,7 @@ class Faq extends React.Component {
       "It’s completely free!",
       "You can sign-up here or go to the link in our Instagram bio to register.",
       "The competition is not limited to any program or any university/college. Any student from any program is free to participate!",
-      "There’s a chance to win a grand cash prize which will be revealed soon. However, other prizes include coffee chat with our sponsors and other amazing opportunities. Stay tuned to our social media pages for the most up to date info!",
+      "First place cash prize: $5,000. Second place cash prize: $2,500. And if that's not enough, we've got tons more in store for the Top 32 and Top 10 teams, including giveaways, swag bags, exclusive networking and speaker sessions and much, much more.",
       "Yes, you can definitely participate! Our case competition is open to undergraduates, recent graduates (graduated within 12 months prior to our event), and postgraduate students. For more details please refer to our rules and regulations page.",
       "A simulation is a virtual environment that will behave and respond to the decisions you make within it—similar to real-world conditions.",
       "Teams will have to submit a 5 minute video presentation and key information documents supporting their solution to the given case. All submissions for their respective pages can be submitted on each case page.",
