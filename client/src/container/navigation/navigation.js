@@ -343,20 +343,36 @@ function Navigation(props) {
                           onClick={() => handleTabChange("caseone")}
                         >
                           <StyledHeader variant="subtitle1" color="primary2">
-                            Case 1
+                            Preliminary Case
                           </StyledHeader>
                         </button>
                         <button className="navigation__dropdownButton">
                           <StyledHeader variant="subtitle1">
-                            Simulation - coming soon!
+                            Simulation - Top 32 Only!
                           </StyledHeader>
                         </button>
                         <button className="navigation__dropdownButton">
                           <StyledHeader variant="subtitle1">
-                            Case 2 - coming soon!
+                            Final Case - Top 10 Only!
                           </StyledHeader>
                         </button>
                       </div>
+                    </div>
+                  </Grow>
+                )}
+                                {isRevive && (
+                  <Grow
+                    value="revival"
+                    in={isRevive}
+                    {...{ timeout: 1000 }}
+                  >
+                    <div className="navigation__dropdownContainer">
+                      <StyledHeader
+                        variant="h1"
+                        onClick={() => handleTabChange("package")}
+                      >
+                        DELEGATE PACKAGE
+                      </StyledHeader>
                     </div>
                   </Grow>
                 )}

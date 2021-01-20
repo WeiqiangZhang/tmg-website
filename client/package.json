@@ -17,6 +17,7 @@
     "react": "^16.13.0",
     "react-device-detect": "^1.14.0",
     "react-dom": "^16.13.0",
+    "react-instagram-embed": "^2.0.0",
     "react-pdf": "^5.0.0",
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.1.2",
