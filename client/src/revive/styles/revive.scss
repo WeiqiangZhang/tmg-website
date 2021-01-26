@@ -1,3 +1,45 @@
 .home {
-    
+  &__container {
+    position: fixed;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 998;
+    background-color: black;
+  }
+  &__animation {
+    position: fixed;
+    padding: 0;
+    margin-left: -18.75rem;
+    margin-top: -18.75rem;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    height: auto;
+    z-index: 999;
+    animation: fadeInFromNone 6s ease-in;
+    &--mobile {
+      margin-left: -10rem;
+      margin-top: -10rem;
+      width: 20rem;
+      height: 20rem;
+    }
+  }
+}
+
+@keyframes fadeInFromNone {
+  0% {
+      opacity: 1;
+  }
+
+  75% {
+      opacity: 1;
+  }
+
+  100% {
+      opacity: 0;
+  }
 }
